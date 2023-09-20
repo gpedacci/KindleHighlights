@@ -858,3 +858,513 @@ Junk Dimensions
 
 Snowflaked Dimensions
 ==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1613-1613 | Añadido el domingo, 23 de julio de 2023 22:47:39
+
+Shrunken Dimensions
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1618-1618 | Añadido el domingo, 23 de julio de 2023 22:49:06
+
+Drilling Across
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1621-1621 | Añadido el domingo, 23 de julio de 2023 22:49:51
+
+Value Chain
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1626-1626 | Añadido el domingo, 23 de julio de 2023 22:51:21
+
+Enterprise Data Warehouse Bus Architecture
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1627-1628 | Añadido el domingo, 23 de julio de 2023 22:51:51
+
+DW/BI system. This architecture decomposes the DW/ BI planning process into manageable pieces by focusing on business processes, while delivering integration via standardized conformed dimensions that are reused across processes.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1626-1628 | Añadido el domingo, 23 de julio de 2023 22:52:08
+
+provides an incremental approach to building the enterprise DW/BI system. This architecture decomposes the DW/ BI planning process into manageable pieces by focusing on business processes, while delivering integration via standardized conformed dimensions that are reused across processes.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1628-1629 | Añadido el domingo, 23 de julio de 2023 22:52:54
+
+It provides an architectural framework, while also decomposing the program to encourage manageable agile implementations corresponding to the rows on the enterprise data warehouse bus matrix.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1631-1631 | Añadido el domingo, 23 de julio de 2023 22:53:25
+
+Enterprise Data Warehouse Bus Matrix
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1632-1634 | Añadido el domingo, 23 de julio de 2023 22:53:52
+
+The rows of the matrix are business processes and the columns are dimensions. The shaded cells of the matrix indicate whether a dimension is associated with a given business process.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1640-1640 | Añadido el domingo, 23 de julio de 2023 22:55:38
+
+Detailed Implementation Bus Matrix
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1640-1641 | Añadido el domingo, 23 de julio de 2023 22:55:53
+
+The detailed implementation bus matrix is a more granular bus matrix where each business process row has been expanded to show specific fact tables or OLAP cubes
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1643-1646 | Añadido el domingo, 23 de julio de 2023 22:56:33
+
+replacing the dimension columns with business functions, such as marketing, sales, and finance, and then shading the matrix cells to indicate which business functions are interested in which business process rows. The opportunity/stakeholder matrix helps identify which business groups should be invited to the collaborative design sessions for each process-centric row
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1642-1642 | Añadido el domingo, 23 de julio de 2023 22:56:55
+
+Opportunity/Stakeholder Matrix
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1642-1643 | Añadido el domingo, 23 de julio de 2023 22:56:58
+
+After the enterprise data warehouse bus matrix rows have been identified, you can draft a different matrix by
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1649-1649 | Añadido el domingo, 23 de julio de 2023 22:57:42
+
+always
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1646-1646 | Añadido el lunes, 24 de julio de 2023 22:43:45
+
+Dealing with Slowly Changing Dimension Attributes
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1648-1650 | Añadido el lunes, 24 de julio de 2023 22:46:17
+
+With type 0, the dimension attribute value never changes, so facts are always grouped by this original value. Type 0 is appropriate for any attribute labeled “original,” such as a customer’s original credit score or a durable identifier. It also applies to most attributes in a date dimension
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1651-1651 | Añadido el lunes, 24 de julio de 2023 22:46:47
+
+Type 1: Overwrite
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1651-1652 | Añadido el lunes, 24 de julio de 2023 22:47:07
+
+With type 1, the old attribute value in the dimension row is overwritten with the new value; type 1 attributes always reflects the most recent assignment, and therefore this technique destroys history.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1654-1654 | Añadido el sábado, 29 de julio de 2023 09:37:51
+
+Type 2: Add New Row
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1655-1655 | Añadido el sábado, 29 de julio de 2023 09:38:01
+
+Type 2 changes add a new row in the dimension with the updated attribute values.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1655-1656 | Añadido el sábado, 29 de julio de 2023 09:38:20
+
+This requires generalizing the primary key of the dimension beyond the natural or durable key because there will potentially be multiple rows describing each member
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1656-1658 | Añadido el sábado, 29 de julio de 2023 09:38:40
+
+When a new row is created for a dimension member, a new primary surrogate key is assigned and used as a foreign key in all fact tables from the moment of the update until a subsequent change creates a new dimension key and updated dimension row.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1658-1659 | Añadido el sábado, 29 de julio de 2023 09:39:03
+
+A minimum of three additional columns should be added to the dimension row with type 2 changes: 1) row effective date or date/time stamp; 2) row expiration date or date/time stamp; and 3) current row indicator
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1661-1661 | Añadido el sábado, 29 de julio de 2023 09:39:24
+
+Type 3: Add New Attribute
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1662-1664 | Añadido el sábado, 29 de julio de 2023 09:40:01
+
+Type 3 changes add a new attribute in the dimension to preserve the old attribute value; the new value overwrites the main attribute as in a type 1 change. This kind of type 3 change is sometimes called an alternate reality. A business user can group and filter fact data by either the current value or alternate reality. This slowly changing dimension technique is used relatively infrequently.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1665-1665 | Añadido el sábado, 29 de julio de 2023 09:40:42
+
+Type 4: Add Mini-Dimension
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1670-1670 | Añadido el sábado, 29 de julio de 2023 09:40:52
+
+Type 5: Add Mini-Dimension and Type 1 Outrigger
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1676-1676 | Añadido el sábado, 29 de julio de 2023 09:41:30
+
+Type 6: Add Type 1 Attributes to Type 2 Dimension
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1680-1681 | Añadido el sábado, 29 de julio de 2023 09:41:51
+
+Type 7: Dual Type 1 and Type 2 Dimensions
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1688-1688 | Añadido el sábado, 29 de julio de 2023 09:42:25
+
+Fixed Depth Positional Hierarchies
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1688-1689 | Añadido el sábado, 29 de julio de 2023 09:42:37
+
+fixed depth hierarchy is a series of many-to-one relationships, such as product to brand to category to department.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1689-1690 | Añadido el sábado, 29 de julio de 2023 09:42:52
+
+When a fixed depth hierarchy is defined and the hierarchy levels have agreed upon names, the hierarchy levels should appear as separate positional attributes in a dimension table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1690-1693 | Añadido el sábado, 29 de julio de 2023 09:43:08
+
+A fixed depth hierarchy is by far the easiest to understand and navigate as long as the above criteria are met. It also delivers predictable and fast query performance. When the hierarchy is not a series of many-to-one relationships or the number of levels varies such that the levels do not have agreed upon names, a ragged hierarchy technique, described below, must be used.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1694-1694 | Añadido el sábado, 29 de julio de 2023 09:43:30
+
+Slightly Ragged/Variable Depth Hierarchies
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1694-1697 | Añadido el sábado, 29 de julio de 2023 09:44:08
+
+Slightly ragged hierarchies don’t have a fixed number of levels, but the range in depth is small. Geographic hierarchies often range in depth from perhaps three levels to six levels. Rather than using the complex machinery for unpredictably variable hierarchies, you can force-fit slightly ragged hierarchies into a fixed depth positional design with separate dimension attributes for the maximum number of levels, and then populate the attribute value based on rules from the business.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1704-1705 | Añadido el martes, 1 de agosto de 2023 17:45:33
+
+Ragged/Variable Depth Hierarchies with Pathstring Attributes
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1711-1711 | Añadido el martes, 1 de agosto de 2023 17:46:28
+
+Table Surrogate Keys
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1711-1711 | Añadido el martes, 1 de agosto de 2023 17:46:40
+
+Surrogate keys are used to implement the
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1711-1712 | Añadido el martes, 1 de agosto de 2023 17:46:48
+
+Surrogate keys are used to implement the primary keys of almost all dimension tables.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1712-1716 | Añadido el martes, 1 de agosto de 2023 17:47:42
+
+Fact table surrogate keys, which are not associated with any dimension, are assigned sequentially during the ETL load process and are used 1) as the single column primary key of the fact table; 2) to serve as an immediate identifier of a fact table row without navigating multiple dimensions for ETL purposes; 3) to allow an interrupted load process to either back out or resume; 4) to allow fact table update operations to be decomposed into less risky inserts plus deletes.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1717-1717 | Añadido el martes, 1 de agosto de 2023 17:49:11
+
+Centipede Fact Tables
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1717-1719 | Añadido el martes, 1 de agosto de 2023 17:49:32
+
+Some designers create separate normalized dimensions for each level of a many-toone hierarchy, such as a date dimension, month dimension, quarter dimension, and year dimension, and then include all these foreign keys in a fact table. This results in a centipede fact table with dozens of hierarchically related dimensions. Centipede fact tables should be avoided.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1722-1722 | Añadido el martes, 1 de agosto de 2023 17:49:57
+
+Numeric Values as Attributes or Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1722-1727 | Añadido el martes, 1 de agosto de 2023 17:51:17
+
+Designers sometimes encounter numeric values that don’t clearly fall into either the fact or dimension attribute categories. A classic example is a product’s standard list price. If the numeric value is used primarily for calculation purposes, it likely belongs in the fact table. If a stable numeric value is used predominantly for filtering and grouping, it should be treated as a dimension attribute; the discrete numeric values can be supplemented with value band attributes (such as $0-50). In some cases, it is useful to model the numeric value as both a fact and dimension attribute, such as a quantitative on-time delivery metric and qualitative textual descriptor
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1728-1728 | Añadido el martes, 1 de agosto de 2023 17:51:45
+
+Lag/Duration Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1728-1733 | Añadido el martes, 1 de agosto de 2023 17:52:55
+
+Accumulating snapshot fact tables capture multiple process milestones, each with a date foreign key and possibly a date/time stamp. Business users often want to analyze the lags or durations between these milestones; sometimes these lags are just the differences between dates, but other times the lags are based on more complicated business rules. If there are dozens of steps in a pipeline, there could be hundreds of possible lags. Rather than forcing the user’s query to calculate each possible lag from the date/time stamps or date dimension foreign keys, just one time lag can be stored for each step measured against the process’s start point. Then every possible lag between two steps can be calculated as a simple subtraction between the two lags stored in the fact table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1734-1734 | Añadido el martes, 1 de agosto de 2023 17:53:08
+
+Header/Line Fact Tables
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1734-1736 | Añadido el martes, 1 de agosto de 2023 17:54:07
+
+Operational transaction systems often consist of a transaction header row that’s associated with multiple transaction lines. With header/line schemas (also known as parent/child schemas), all the header-level dimension foreign keys and degenerate dimensions should be included on the line-level fact table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1737-1737 | Añadido el martes, 1 de agosto de 2023 17:54:33
+
+Allocated Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1737-1740 | Añadido el martes, 1 de agosto de 2023 17:54:57
+
+It is quite common in header/line transaction data to encounter facts of differing granularity, such as a header freight charge. You should strive to allocate the header facts down to the line level based on rules provided by the business, so the allocated facts can be sliced and rolled up by all the dimensions. In many cases, you can avoid creating a header-level fact table, unless this aggregation delivers query performance advantages
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1741-1741 | Añadido el martes, 1 de agosto de 2023 17:55:12
+
+Profit and Loss Fact Tables Using Allocations
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1741-1747 | Añadido el martes, 1 de agosto de 2023 17:55:51
+
+Fact tables that expose the full equation of profit are among the most powerful deliverables of an enterprise DW/BI system. The equation of profit is (revenue) – (costs) = (profit). Fact tables ideally implement the profit equation at the grain of the atomic revenue transaction and contain many components of cost. Because these tables are at the atomic grain, numerous rollups are possible, including customer profitability, product profitability, promotion profitability, channel profitability, and others. However, these fact tables are difficult to build because the cost components must be allocated from their original sources to the fact table’s grain. This allocation step is often a major ETL subsystem and is a politically charged step that requires highlevel executive support. For these reasons, profit and loss fact tables are typically not tackled during the early implementation phases of a DW/BI program.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1748-1748 | Añadido el domingo, 20 de agosto de 2023 23:03:42
+
+Multiple Currency Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1748-1750 | Añadido el domingo, 20 de agosto de 2023 23:04:58
+
+Fact tables that record financial transactions in multiple currencies should contain a pair of columns for every financial fact in the row. One column contains the fact expressed in the true currency of the transaction, and the other contains the same fact expressed in a single standard currency that is used throughout the fact table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1751-1752 | Añadido el domingo, 20 de agosto de 2023 23:05:24
+
+This fact table also must have a currency dimension to identify the transaction’s true currency.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1752-1753 | Añadido el martes, 22 de agosto de 2023 23:56:04
+
+Multiple Units of Measure Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1753-1753 | Añadido el martes, 22 de agosto de 2023 23:56:17
+
+Some business processes require facts to be stated simultaneously in several units of measure.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1754-1756 | Añadido el martes, 22 de agosto de 2023 23:57:03
+
+If the fact table contains a large number of facts, each of which must be expressed in all units of measure, a convenient technique is to store the facts once in the table at an agreed standard unit of measure, but also simultaneously store conversion factors between the standard measure and all the others.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1756-1758 | Añadido el martes, 22 de agosto de 2023 23:57:33
+
+This fact table could be deployed through views to each user constituency, using an appropriate selected conversion factor. The conversion factors must reside in the underlying fact table row to ensure the view calculation is simple and correct, while minimizing query complexity.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1759-1759 | Añadido el martes, 22 de agosto de 2023 23:57:48
+
+Year-to-Date Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1760-1762 | Añadido el martes, 22 de agosto de 2023 23:58:20
+
+A more reliable, extensible way to handle these assorted requests is to calculate the YTD metrics in the BI applications or OLAP cube rather than storing YTD facts in the fact table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1762-1762 | Añadido el martes, 22 de agosto de 2023 23:58:38
+
+Multipass SQL to Avoid Fact-to-Fact Table
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1762-1763 | Añadido el martes, 22 de agosto de 2023 23:58:47
+
+Multipass SQL to Avoid Fact-to-Fact Table Joins A BI application must never issue SQL that joins two fact tables together across the fact table’s foreign keys.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1762-1762 | Añadido el martes, 22 de agosto de 2023 23:58:59
+
+Multipass SQL to Avoid Fact-to-Fact Table Joins
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1763-1764 | Añadido el martes, 22 de agosto de 2023 23:59:32
+
+keys. It is impossible to control the cardinality of the answer set of such a join in a relational database, and incorrect results
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1762-1764 | Añadido el martes, 22 de agosto de 2023 23:59:43
+
+A BI application must never issue SQL that joins two fact tables together across the fact table’s foreign keys. It is impossible to control the cardinality of the answer set of such a join in a relational database, and incorrect results will be returned to the BI tool.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1767-1768 | Añadido el jueves, 24 de agosto de 2023 22:03:45
+
+Timespan Tracking in Fact Tables
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1768-1768 | Añadido el jueves, 24 de agosto de 2023 22:03:55
+
+There are three basic fact table grains: transaction, periodic snapshot, and accumulating snapshot
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1772-1772 | Añadido el jueves, 24 de agosto de 2023 22:04:37
+
+Late Arriving Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1772-1774 | Añadido el jueves, 24 de agosto de 2023 22:04:57
+
+A fact row is late arriving if the most current dimensional context for new fact rows does not match the incoming row. This happens when the fact row is delayed. In this case, the relevant dimensions must be searched to find the dimension keys that were effective when the late arriving measurement event occurred.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1775-1775 | Añadido el jueves, 24 de agosto de 2023 22:05:21
+
+Advanced Dimension Techniques
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1775-1776 | Añadido el jueves, 24 de agosto de 2023 22:05:25
+
+The techniques in this section refer to more advanced dimension table patterns. Dimension-to-Dimension Table Joins
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1871-1872 | Añadido el domingo, 3 de septiembre de 2023 22:17:37
+
+3Retail Sales
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1893-1893 | Añadido el domingo, 3 de septiembre de 2023 22:19:49
+
+Four-Step Dimensional Design Process
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1895-1895 | Añadido el domingo, 3 de septiembre de 2023 22:20:10
+
+Step 1: Select the Business Process
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1895-1897 | Añadido el domingo, 3 de septiembre de 2023 22:21:20
+
+A business process is a low-level activity performed by an organization, such as taking orders, invoicing, receiving payments, handling service calls, registering students, performing a medical procedure, or processing claims. To identify your organization’s business processes, it’s helpful to understand several common characteristics:
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1898-1899 | Añadido el domingo, 3 de septiembre de 2023 22:21:37
+
+Business processes are frequently expressed as action verbs because they repre■ sent activities that the business performs.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1899-1899 | Añadido el domingo, 3 de septiembre de 2023 22:21:49
+
+The companion dimensions describe descriptive context associated with each business process event.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1900-1901 | Añadido el domingo, 3 de septiembre de 2023 22:22:07
+
+Business processes are typically supported by an operational system, such as the billing or purchasing system
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1901-1903 | Añadido el domingo, 3 de septiembre de 2023 22:22:30
+
+Business processes generate or capture key performance metrics. Sometimes the metrics are a direct result of the business process; the measurements are derivations at other times. Analysts invariably want to scrutinize and evaluate these metrics by a seemingly limitless combination of filters and constraints.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1904-1906 | Añadido el domingo, 3 de septiembre de 2023 22:23:04
+
+Business processes are usually triggered by an input and result in output metrics. In many organizations, there’s a series of processes in which the outputs from one process become the inputs to the next. In the parlance of a dimensional modeler, this series of processes results in a series of fact tables.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1906-1908 | Añadido el domingo, 3 de septiembre de 2023 22:23:40
+
+You need to listen carefully to the business to identify the organization’s business processes because business users can’t readily answer the question, “What business process are you interested in?” The performance measurements users want to analyze in the DW/BI system result from business process events
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1912-1915 | Añadido el domingo, 3 de septiembre de 2023 22:24:45
+
+It’s also worth noting what a business process is not. Organizational business departments or functions do not equate to business processes. By focusing on processes, rather than on functional departments, consistent information is delivered more economically throughout the organization. If you design departmentally bound dimensional models, you inevitably duplicate data with different labels and data values. The best way to ensure consistency is to publish the data once.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1915-1915 | Añadido el domingo, 3 de septiembre de 2023 22:25:07
+
+Step 2: Declare the Grain
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1916-1918 | Añadido el domingo, 3 de septiembre de 2023 22:25:39
+
+Declaring the grain means specifying exactly what an individual fact table row represents. The grain conveys the level of detail associated with the fact table measurements. It provides the answer to the question, “How do you describe a single row in the fact table?” The grain is determined by the physical realities of the operational system that captures the business process’s events.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1918-1918 | Añadido el domingo, 3 de septiembre de 2023 22:25:48
+
+Example grain declarations include:
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1919-1923 | Añadido el domingo, 3 de septiembre de 2023 22:26:31
+
+One row per scan of an individual product on a customer’s sales transaction ■ One row per line item on a bill from a doctor ■ One row per individual boarding pass scanned at an airport gate ■ One row per daily snapshot of the inventory levels for each item in a warehouse ■ One row per bank account each month
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1923-1926 | Añadido el domingo, 3 de septiembre de 2023 22:27:09
+
+These grain declarations are expressed in business terms. Perhaps you were expecting the grain to be a traditional declaration of the fact table’s primary key. Although the grain ultimately is equivalent to the primary key, it’s a mistake to list a set of dimensions and then assume this list is the grain declaration. Whenever possible, you should express the grain in business terms.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1926-1932 | Añadido el domingo, 3 de septiembre de 2023 22:28:29
+
+Dimensional modelers sometimes try to bypass this seemingly unnecessary step of the four-step design process. Please don’t! Declaring the grain is a critical step that can’t be taken lightly. In debugging thousands of dimensional designs over the years, the most frequent error is not declaring the grain of the fact table at the beginning of the design process. If the grain isn’t clearly defined, the whole design rests on quicksand; discussions about candidate dimensions go around in circles, and rogue facts sneak into the design. An inappropriate grain haunts a DW/BI implementation! It is extremely important that everyone on the design team reaches agreement on the fact table’s granularity. Having said this, you may discover in steps 3 or 4 of the design process that the grain statement is wrong. This is okay, but then you must return to step 2, restate the grain correctly, and revisit steps 3 and 4
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1932-1932 | Añadido el domingo, 3 de septiembre de 2023 22:28:41
+
+again.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1932-1933 | Añadido el domingo, 3 de septiembre de 2023 22:29:02
+
+Dimensions fall out of the question, “How do business people describe the data resulting from the business process measurement events?”
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1933-1934 | Añadido el domingo, 3 de septiembre de 2023 22:29:16
+
+You need to decorate fact tables with a robust set of dimensions representing all possible descriptions that take on single values in the context of each measurement. If you
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1933-1937 | Añadido el domingo, 3 de septiembre de 2023 22:29:44
+
+You need to decorate fact tables with a robust set of dimensions representing all possible descriptions that take on single values in the context of each measurement. If you are clear about the grain, the dimensions typically can easily be identified as they represent the “who, what, where, when, why, and how” associated with the event. Examples of common dimensions include date, product, customer, employee, and facility. With the choice of each dimension, you then list all the discrete, text-like attributes that flesh out each dimension table. Step
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1933-1937 | Añadido el domingo, 3 de septiembre de 2023 22:30:06
+
+You need to decorate fact tables with a robust set of dimensions representing all possible descriptions that take on single values in the context of each measurement. If you are clear about the grain, the dimensions typically can easily be identified as they represent the “who, what, where, when, why, and how” associated with the event. Examples of common dimensions include date, product, customer, employee, and facility. With the choice of each dimension, you then list all the discrete, text-like attributes that flesh out each dimension table. Step 4: Identify the Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1937-1940 | Añadido el domingo, 3 de septiembre de 2023 22:30:42
+
+Facts are determined by answering the question, “What is the process measuring?” Business users are keenly interested in analyzing these performance metrics. All candidate facts in a design must be true to the grain defined in step 2. Facts that clearly belong to a different grain must be in a separate fact table. Typical facts are numeric additive figures, such as quantity ordered or dollar cost amount.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1940-1941 | Añadido el domingo, 3 de septiembre de 2023 22:32:01
+
+You need to consider both your business users’ requirements and the realities of your source data in tandem to make decisions regarding the four steps,
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1941-1948 | Añadido el domingo, 3 de septiembre de 2023 22:32:24
+
+We strongly encourage you to resist the temptation to model the data by looking at source data alone. It may be less intimidating to dive into the data rather than interview a business person; however, the data is no substitute for business user input. Unfortunately, many organizations have attempted this pathof-least-resistance data-driven approach but without much success. Business Dimensional ModelData RequirementsBusiness Process RealitiesGrain Dimensions Facts Figure 3-1: Key input to the four-step dimensional design process. Retail Case Study Let’s start with a brief description of the retail business used in this case study. We begin with this industry simply because it is one we are all familiar with. But the patterns discussed in the context of this case study are relevant to virtually every dimensional model
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1941-1944 | Añadido el domingo, 3 de septiembre de 2023 22:32:41
+
+We strongly encourage you to resist the temptation to model the data by looking at source data alone. It may be less intimidating to dive into the data rather than interview a business person; however, the data is no substitute for business user input. Unfortunately, many organizations have attempted this pathof-least-resistance data-driven approach but without much success.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1946-1946 | Añadido el martes, 19 de septiembre de 2023 21:43:35
+
+Retail Case Study
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1977-1978 | Añadido el martes, 19 de septiembre de 2023 21:53:27
+
+Atomic data provides maximum analytic flexibility because it can be constrained and rolled up in every way possible. Detailed data in a dimensional model is poised and ready for the ad hoc attack by business users
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1978-1979 | Añadido el miércoles, 20 de septiembre de 2023 12:10:05
+
+NOTE You should develop dimensional models representing the most detailed, atomic information captured by a business process.
+==========
