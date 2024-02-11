@@ -1368,3 +1368,2173 @@ Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
 
 NOTE You should develop dimensional models representing the most detailed, atomic information captured by a business process.
 ==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1949-1949 | Añadido el jueves, 28 de septiembre de 2023 23:28:54
+
+The business has 100 grocery stores spread across five states.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1949-1950 | Añadido el jueves, 28 de septiembre de 2023 23:29:17
+
+Each store has a full complement of departments, including grocery, frozen foods, dairy, meat, produce, bakery, floral, and health/beauty aids.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1950-1951 | Añadido el jueves, 28 de septiembre de 2023 23:29:24
+
+Each store has approximately 60,000 individual products, called stock keeping units (SKUs), on its shelves.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1951-1953 | Añadido el jueves, 28 de septiembre de 2023 23:30:12
+
+Data is collected at several interesting places in a grocery store. Some of the most useful data is collected at the cash registers as customers purchase products. The pointof-sale (POS) system scans product barcodes at the cash register, measuring consumer takeaway at the front door of the grocery store,
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1953-1954 | Añadido el jueves, 28 de septiembre de 2023 23:30:30
+
+Other data is captured at the store’s back door where vendors make deliveries.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1958-1959 | Añadido el jueves, 28 de septiembre de 2023 23:30:56
+
+At the grocery store, management is concerned with the logistics of ordering, stocking, and selling products while maximizing profit
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1959-1961 | Añadido el jueves, 28 de septiembre de 2023 23:31:31
+
+The profit ultimately comes from charging as much as possible for each product, lowering costs for product acquisition and overhead, and at the same time attracting as many customers as possible in a highly competitive environment. Some of the most significant management decisions have to do with pricing and promotions.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1961-1962 | Añadido el jueves, 28 de septiembre de 2023 23:31:48
+
+Both store management and headquarters marketing spend a great deal of time tinkering with pricing and promotions.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1962-1963 | Añadido el jueves, 28 de septiembre de 2023 23:32:10
+
+Promotions in a grocery store include temporary price reductions, ads in newspapers and newspaper inserts, displays in the grocery store, and coupons.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1963-1963 | Añadido el jueves, 28 de septiembre de 2023 23:32:18
+
+The most direct and effective way to create a surge in the volume of product sold is to lower the price dramatically.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1961-1962 | Añadido el jueves, 28 de septiembre de 2023 23:32:22
+
+Both store management and headquarters marketing spend a great deal of time tinkering
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1963-1966 | Añadido el jueves, 28 de septiembre de 2023 23:32:53
+
+A 50-cent reduction in the price of paper towels, especially when coupled with an ad and display, can cause the sale of the paper towels to jump by a factor of 10. Unfortunately, such a big price reduction usually is not sustainable because the towels probably are being sold at a loss. As a result of these issues, the visibility of all forms of promotion is an important part of analyzing the operations of a grocery store.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1967-1967 | Añadido el jueves, 28 de septiembre de 2023 23:33:27
+
+Step 1: Select the Business Process
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1967-1969 | Añadido el jueves, 28 de septiembre de 2023 23:33:47
+
+The first step in the design is to decide what business process to model by combining an understanding of the business requirements with an understanding of the available source data.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1969-1970 | Añadido el jueves, 28 de septiembre de 2023 23:36:18
+
+NOTE The first DW/BI project should focus on the business process that is both the most critical to the business users, as well as the most feasible. Feasibility covers a range of considerations, including data availability and quality, as well as organizational readiness.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1971-1972 | Añadido el viernes, 29 de septiembre de 2023 00:05:27
+
+In our retail case study, management wants to better understand customer purchases as captured by the POS system. Thus the business process you’re modeling is POS retail sales transactions
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1972-1973 | Añadido el viernes, 29 de septiembre de 2023 00:05:44
+
+This data enables the business users to analyze which products are selling in which stores on which days under what promotional conditions in which transactions.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1973-1973 | Añadido el viernes, 29 de septiembre de 2023 00:06:29
+
+Step 2: Declare the Grain
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1973-1974 | Añadido el viernes, 29 de septiembre de 2023 00:06:42
+
+After the business process has been identified, the design team faces a serious decision about the granularity. What level of data detail should be made available in the dimensional model?
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1975-1977 | Añadido el viernes, 29 de septiembre de 2023 00:08:19
+
+The more detailed and atomic the fact measurement, the more things you know for sure. All those things you know for sure translate into dimensions. In this regard, atomic data is a perfect match for the dimensional approach.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1979-1986 | Añadido el viernes, 29 de septiembre de 2023 00:09:09
+
+Of course, you could declare a more summarized granularity representing an aggregation of the atomic data. However, as soon as you select a higher level grain, you limit yourself to fewer and/or potentially less detailed dimensions. The less granular model is immediately vulnerable to unexpected user requests to drill down into the details. Users inevitably run into an analytic wall when not given access to the atomic data. Although aggregated data plays an important role for performance tuning, it is not a substitute for giving users access to the lowest level details; users can easily summarize atomic data, but it’s impossible to create details from summary data. Unfortunately, some industry pundits remain confused about this point. They claim dimensional models are only appropriate for summarized data and then criticize the dimensional modeling approach for its supposed need to anticipate the business question. This misunderstanding goes away when detailed, atomic data is made available in a dimensional model.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1986-1987 | Añadido el viernes, 29 de septiembre de 2023 00:10:20
+
+In our case study, the most granular data is an individual product on a POS transaction, assuming the POS system rolls up all sales for a given product within a shopping cart into a single line item.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1989-1989 | Añadido el viernes, 29 de septiembre de 2023 00:10:59
+
+For example, they may want to understand the difference in sales on Monday versus Sunday. Or they may
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1987-1989 | Añadido el viernes, 29 de septiembre de 2023 00:11:07
+
+Although users probably are not interested in analyzing single items associated with a specific POS transaction, you can’t predict all the ways they’ll want to cull through that data.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1990-1994 | Añadido el viernes, 29 de septiembre de 2023 00:11:25
+
+brands. Or they may want to understand how many shoppers took advantage of the 50-cents-off promotion on shampoo. Or they may want to determine the impact of decreased sales when a competitive diet soda product was promoted heavily. Although none of these queries calls for data from one specific transaction, they are broad questions that require detailed data sliced in precise ways. None of them could have been answered if you elected to provide access only to summarized data. NOTE A DW/BI system almost always demands data expressed at the lowest possible grain, not because queries want to see individual rows but because queries need to cut through the details in very precise ways.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1989-1990 | Añadido el viernes, 29 de septiembre de 2023 00:11:44
+
+For example, they may want to understand the difference in sales on Monday versus Sunday. Or they may want to assess whether it’s worthwhile to stock so many individual sizes of certain brands.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1990-1991 | Añadido el viernes, 29 de septiembre de 2023 00:12:01
+
+Or they may want to understand how many shoppers took advantage of the 50-cents-off promotion on shampoo.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1991-1991 | Añadido el viernes, 29 de septiembre de 2023 00:12:19
+
+Or they may want to determine the impact of decreased sales when a competitive diet soda product was promoted heavily.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1992-1993 | Añadido el viernes, 29 de septiembre de 2023 00:12:35
+
+None of them could have been answered if you elected to provide access only to summarized data.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1993-1994 | Añadido el viernes, 29 de septiembre de 2023 00:12:45
+
+NOTE A DW/BI system almost always demands data expressed at the lowest possible grain, not because queries want to see individual rows but because queries need to cut through the details in very precise ways.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1995-1995 | Añadido el viernes, 29 de septiembre de 2023 00:12:56
+
+Step 3: Identify the Dimensions
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1996-1998 | Añadido el viernes, 29 de septiembre de 2023 00:14:48
+
+Within the framework of the primary dimensions, you can ask whether other dimensions can be attributed to the POS measurements, such as the date of the sale, the store where the sale occurred, the promotion under which the product is sold, the cashier who handled the sale, and potentially the method of payment.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 1998-2001 | Añadido el viernes, 29 de septiembre de 2023 00:15:23
+
+NOTE A careful grain statement determines the primary dimensionality of the fact table. You then add more dimensions to the fact table if these additional dimensions naturally take on only one value under each combination of the primary dimensions. If the additional dimension violates the grain by causing additional fact rows to be generated, the dimension needs to be disqualified or the grain statement needs to be revisited
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2001-2002 | Añadido el viernes, 29 de septiembre de 2023 00:16:25
+
+The following descriptive dimensions apply to the case: date, product, store, promotion, cashier, and method of payment.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2005-2005 | Añadido el viernes, 29 de septiembre de 2023 00:17:06
+
+Step 4: Identify the Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2006-2008 | Añadido el viernes, 29 de septiembre de 2023 00:18:37
+
+Again, the grain declaration helps anchor your thinking. Simply put, the facts must be true to the grain: the individual product line item on the POS transaction in this case. When considering potential facts, you may again discover adjustments need to be made to either your earlier grain assumptions or choice of dimensions.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2010-2013 | Añadido el viernes, 29 de septiembre de 2023 00:21:56
+
+Likewise, the extended discount dollar amount is the sales quantity multiplied by the unit discount amount. Some sophisticated POS systems also provide a standard dollar cost for the product as delivered to the store by the vendor. Presuming this cost fact is readily available and doesn’t require a heroic activity-based costing initiative, you can include the extended cost amount in the fact table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2008-2010 | Añadido el viernes, 29 de septiembre de 2023 00:22:05
+
+The facts collected by the POS system include the sales quantity (for example, the number of cans of chicken noodle soup), per unit regular, discount, and net paid prices, and extended discount and sales dollar amounts. The extended sales dollar amount equals the sales quantity multiplied by the net unit price.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2013-2013 | Añadido el viernes, 29 de septiembre de 2023 00:22:59
+
+The fact table begins to take shape in Figure 3-3.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2017-2019 | Añadido el viernes, 29 de septiembre de 2023 00:23:36
+
+Four of the facts, sales quantity and the extended discount, sales, and cost dollar amounts, are beautifully additive across all the dimensions. You can slice and dice the fact table by the dimension attributes with impunity, and every sum of these four facts is valid and correct
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2019-2019 | Añadido el viernes, 29 de septiembre de 2023 00:24:30
+
+Derived Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2028-2031 | Añadido el viernes, 29 de septiembre de 2023 00:27:15
+
+Views are a reasonable way to minimize user error while saving on storage, but the DBA must allow no exceptions to accessing the data through the view. Likewise, some organizations want to perform the calculation in the BI tool. Again, this works if all users access the data using a common tool, which is seldom the case in our experience. However, sometimes non-additive metrics on a report such as percentages or ratios must be computed in the BI application because the calculation cannot be precalculated and stored in a fact table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2024-2028 | Añadido el viernes, 29 de septiembre de 2023 00:27:21
+
+eliminating the possibility of user calculation errors. The cost of a user incorrectly representing gross profit overwhelms the minor incremental storage cost. Storing it also ensures all users and BI reporting applications refer to gross profit consistently. Because gross profit can be calculated from adjacent data within a single fact table row, some would argue that you should perform the calculation in a view that is indistinguishable from the table. This is a reasonable approach if all users access the data via the view and no users with ad hoc query tools can sneak around the view to get at the physical table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2019-2023 | Añadido el viernes, 29 de septiembre de 2023 00:27:30
+
+You can compute the gross profit by subtracting the extended cost dollar amount from the extended sales dollar amount, or revenue. Although computed, gross profit is also perfectly additive across all the dimensions; you can calculate the gross profit of any combination of products sold in any set of stores on any set of days. Dimensional modelers sometimes question whether a calculated derived fact should be stored in the database. We generally recommend it be stored physically. In this case study, the gross profit calculation is straightforward, but storing it means it’s computed consistently in the ETL process
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2032-2037 | Añadido el viernes, 29 de septiembre de 2023 00:27:52
+
+Gross margin can be calculated by dividing the gross profit by the extended sales dollar revenue. Gross margin is a non-additive fact because it can’t be summarized along any dimension. You can calculate the gross margin of any set of products, stores, or days by remembering to sum the revenues and costs respectively before dividing. NOTE Percentages and ratios, such as gross margin, are non-additive. The numerator and denominator should be stored in the fact table. The ratio can then be calculated in a BI tool for any slice of the fact table by remembering to calculate the ratio of the sums, not the sum of the ratios. Unit price is another non-additive fact. Unlike the extended amounts in the fact
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2032-2037 | Añadido el viernes, 29 de septiembre de 2023 00:29:02
+
+Gross margin can be calculated by dividing the gross profit by the extended sales dollar revenue. Gross margin is a non-additive fact because it can’t be summarized along any dimension. You can calculate the gross margin of any set of products, stores, or days by remembering to sum the revenues and costs respectively before dividing. NOTE Percentages and ratios, such as gross margin, are non-additive. The numerator and denominator should be stored in the fact table. The ratio can then be calculated in a BI tool for any slice of the fact table by remembering to calculate the ratio of the sums, not the sum of the ratios. Unit price is another non-additive fact. Unlike the extended amounts in the fact table, summing unit price across any of the dimensions results in a meaningless, nonsensical number.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2047-2048 | Añadido el lunes, 2 de octubre de 2023 16:34:35
+
+Transaction Fact Tables
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2048-2049 | Añadido el lunes, 2 de octubre de 2023 16:34:39
+
+Transactional business processes are the most common. The fact tables representing these processes share several characteristics:
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2049-2050 | Añadido el lunes, 2 de octubre de 2023 16:34:57
+
+The grain of atomic transaction fact tables can be succinctly expressed in the context of the transaction, such as one row per transaction or one row per transaction line.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2051-2052 | Añadido el lunes, 2 de octubre de 2023 16:36:23
+
+Because these fact tables record a transactional event, they are often sparsely populated. In our case study, we certainly wouldn’t sell every product in every shopping cart.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2052-2053 | Añadido el lunes, 2 de octubre de 2023 16:37:19
+
+Even though transaction fact tables are unpredictably and sparsely populated, they can be truly enormous. Most billion and trillion row tables in a data warehouse are transaction fact tables.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2054-2054 | Añadido el lunes, 2 de octubre de 2023 16:37:30
+
+Transaction fact tables tend to be highly dimensional
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2055-2056 | Añadido el lunes, 2 de octubre de 2023 16:37:46
+
+The metrics resulting from transactional events are typically additive as long as they have been extended by the quantity amount, rather than capturing per unit metrics
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2063-2064 | Añadido el lunes, 2 de octubre de 2023 16:42:27
+
+Dimension Table Details
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2065-2065 | Añadido el lunes, 2 de octubre de 2023 16:43:03
+
+Date Dimension
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2065-2066 | Añadido el lunes, 2 de octubre de 2023 16:43:36
+
+The date dimension is a special dimension because it is the one dimension nearly guaranteed to be in every dimensional model since virtually every business process captures a time series of performance metrics.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2070-2071 | Añadido el lunes, 2 de octubre de 2023 16:44:34
+
+Unlike most of the other dimensions, you can build the date dimension table in advance. You may put 10 or 20 years of
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2071-2072 | Añadido el lunes, 2 de octubre de 2023 16:44:57
+
+rows representing individual days in the table, so you can cover the history you have stored, as well as several years in the future. Even 20 years’ worth of days is only approximately 7,300 rows, which is a relatively small dimension table.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2073-2073 | Añadido el lunes, 2 de octubre de 2023 16:45:45
+
+Figure 3-4.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2078-2079 | Añadido el lunes, 2 de octubre de 2023 16:46:11
+
+Each column in the date dimension table is defined by the particular day that the
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2078-2079 | Añadido el lunes, 2 de octubre de 2023 16:46:22
+
+Each column in the date dimension table is defined by the particular day that the row represents.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2079-2080 | Añadido el lunes, 2 de octubre de 2023 16:47:01
+
+The day-of-week column contains the day’s name, such as Monday. This column would be used to create reports comparing Monday business with Sunday business.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2080-2081 | Añadido el lunes, 2 de octubre de 2023 16:47:09
+
+The day number in calendar month column starts with 1 at the beginning of each month and runs to 28, 29, 30, or 31 depending on the month
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2081-2081 | Añadido el lunes, 2 de octubre de 2023 16:47:22
+
+This column is useful for comparing the same day each month.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2081-2082 | Añadido el lunes, 2 de octubre de 2023 16:47:34
+
+Similarly, you could have a month number in year (1, . . ., 12). All these integers support simple date arithmetic across year and month boundaries.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2082-2085 | Añadido el lunes, 2 de octubre de 2023 16:48:46
+
+For reporting, you should include both long and abbreviated labels. For example, you would want a month name attribute with values such as January. In addition, a year-month (YYYY-MM) column is useful as a report column header. You likely also want a quarter number (Q1, . . ., Q4), as well as a year-quarter, such as 2013-Q1. You would include similar columns for the fiscal periods if they differ from calendar periods.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2093-2094 | Añadido el lunes, 2 de octubre de 2023 16:49:14
+
+NOTE A sample date dimension is available at www.kimballgroup.com under the Tools and Utilities tab for this book title.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2104-2104 | Añadido el lunes, 2 de octubre de 2023 16:51:22
+
+Flags and Indicators as Textual Attributes
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2104-2105 | Añadido el lunes, 2 de octubre de 2023 16:56:01
+
+Like many operational flags and indicators, the date dimension’s holiday indicator is a simple indicator with two potential values.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2105-2106 | Añadido el lunes, 2 de octubre de 2023 16:56:25
+
+Because dimension table attributes serve as report labels and values in pull-down query filter lists, this indicator should be populated with meaningful values such as Holiday or Non-holiday instead of the cryptic Y/N, 1/0, or True/False
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2106-2109 | Añadido el lunes, 2 de octubre de 2023 16:56:53
+
+As illustrated in Figure 3-6, imagine a report comparing holiday versus non-holiday sales for a product. More meaningful domain values for this indicator translate into a more meaningful, self-explanatory report. Rather than decoding flags into understandable labels in the BI application, we prefer that decoded values be stored in the database so they’re consistently available to all users regardless of their BI reporting environment or tools.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2112-2114 | Añadido el viernes, 6 de octubre de 2023 18:54:02
+
+similar argument holds true for the weekday indicator that would have a value of Weekday or Weekend. Saturdays and Sundays obviously would be assigned the weekend value. Of course, multiple date table attributes can be jointly constrained, so you can easily compare weekday holidays with weekend holidays
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2112-2114 | Añadido el viernes, 6 de octubre de 2023 18:54:08
+
+similar argument holds true for the weekday indicator that would have a value of Weekday or Weekend. Saturdays and Sundays obviously would be assigned the weekend value. Of course, multiple date table attributes can be jointly constrained, so you can easily compare weekday holidays with weekend holidays
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2112-2114 | Añadido el viernes, 6 de octubre de 2023 18:54:24
+
+A similar argument holds true for the weekday indicator that would have a value of Weekday or Weekend. Saturdays and Sundays obviously would be assigned the weekend value. Of course, multiple date table attributes can be jointly constrained, so you can easily compare weekday holidays with weekend holidays.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2115-2115 | Añadido el viernes, 6 de octubre de 2023 18:55:13
+
+Current and Relative Date Attributes
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2115-2120 | Añadido el viernes, 6 de octubre de 2023 18:55:24
+
+Most date dimension attributes are not subject to updates. June 1, 2013 will always roll up to June, Calendar Q2, and 2013. However, there are attributes you can add to the basic date dimension that will change over time, including IsCurrentDay, IsCurrentMonth, IsPrior60Days, and so on. IsCurrentDay obviously must be updated each day; the attribute is useful for generating reports that always run for today. A nuance to consider is the day that IsCurrentDay refers to. Most data warehouses load data daily, so IsCurrentDay would refer to yesterday (or more accurately, the most recent day loaded). You might also add attributes to the date dimension that are unique to your corporate calendar, such as IsFiscalMonthEnd.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2123-2123 | Añadido el viernes, 6 de octubre de 2023 18:57:10
+
+Time-of-Day as a Dimension or Fact
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2123-2127 | Añadido el viernes, 6 de octubre de 2023 18:58:22
+
+Although date and time are comingled in an operational date/time stamp, time-ofday is typically separated from the date dimension to avoid a row count explosion in the date dimension. As noted earlier, a date dimension with 20 years of history contains approximately 7,300 rows. If you changed the grain of this dimension to one row per minute in a day, you’d end up with over 10 million rows to accommodate the 1,440 minutes per day. If you tracked time to the second, you’d have more than 31 million rows per year! Because the date dimension is likely the most frequently constrained dimension in a schema, it should be kept as small and manageable as possible.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2127-2130 | Añadido el viernes, 6 de octubre de 2023 19:01:18
+
+If you want to filter or roll up time periods based on summarized day part groupings, such as activity during 15-minute intervals, hours, shifts, lunch hour, or prime time, time-of-day would be treated as a full-fledged dimension table with one row per discrete time period, such as one row per minute within a 24-hour period resulting in a dimension with 1,440 rows.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2130-2134 | Añadido el viernes, 6 de octubre de 2023 19:01:57
+
+If there’s no need to roll up or filter on time-of-day groupings, time-of-day should be handled as a simple date/time fact in the fact table. By the way, business users are often more interested in time lags, such as the transaction’s duration, rather than discreet start and stop times. Time lags can easily be computed by taking the difference between date/time stamps. These date/time stamps also allow an application to determine the time gap between two transactions of interest, even if these transactions exist in different days, months, or years.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2134-2134 | Añadido el viernes, 6 de octubre de 2023 19:02:40
+
+Product Dimension
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2134-2136 | Añadido el viernes, 6 de octubre de 2023 19:03:40
+
+Product Dimension The product dimension describes every SKU in the grocery store. Although a typical store may stock 60,000 SKUs, when you account for different merchandising schemes and historical products that are no longer available, the product dimension may have 300,000 or more rows. The product dimension is almost always sourced from the operational product master file.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2138-2138 | Añadido el viernes, 6 de octubre de 2023 19:03:59
+
+Flatten Many-to-One Hierarchies
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2138-2140 | Añadido el viernes, 6 de octubre de 2023 19:04:36
+
+The product dimension represents the many descriptive attributes of each SKU. The merchandise hierarchy is an important group of attributes. Typically, individual SKUs roll up to brands, brands roll up to categories, and categories roll up to departments. Each
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2149-2153 | Añadido el viernes, 6 de octubre de 2023 19:05:32
+
+For each SKU, all levels of the merchandise hierarchy are well defined. Some attributes, such as the SKU description, are unique. In this case, there are 300,000 different values in the SKU description column. At the other extreme, there are only perhaps 50 distinct values of the department attribute. Thus, on average, there are 6,000 repetitions of each unique value in the department attribute. This is perfectly acceptable! You do not need to separate these repeated values into a second normalized table to save space.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2153-2155 | Añadido el viernes, 6 de octubre de 2023 19:06:18
+
+NOTE Keeping the repeated low cardinality values in the primary dimension table is a fundamental dimensional modeling technique. Normalizing these values into separate tables defeats the primary goals of simplicity and performance, as discussed in “Resisting Normalization Urges” later in this chapter
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2164-2168 | Añadido el viernes, 6 de octubre de 2023 19:09:58
+
+Attributes with Embedded Meaning Often operational product codes, identified in the dimension table by the NK notation for natural key, have embedded meaning with different parts of the code representing significant characteristics of the product. In this case, the multipart attribute should be both preserved in its entirety within the dimension table, as well as broken down into its component parts, which are handled as separate attributes. For example, if the fifth through ninth characters in the operational code identify the manufacturer, the manufacturer’s name should also be included as a dimension table attribute
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2177-2178 | Añadido el viernes, 6 de octubre de 2023 19:13:01
+
+for fact calculations and dimension constraining,
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2177-2181 | Añadido el viernes, 6 de octubre de 2023 19:13:14
+
+NOTE Data elements that are used both for fact calculations and dimension constraining, grouping, and labeling should be stored in both locations, even though a clever programmer could write applications that access these data elements from a single location. It is important that dimensional models be as consistent as possible and application development be predictably simple. Data involved in calculations should be in fact tables and data involved in constraints, groups and labels should be in dimension tables.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2181-2181 | Añadido el viernes, 6 de octubre de 2023 19:13:42
+
+Drilling Down on Dimension Attributes
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2181-2183 | Añadido el viernes, 6 de octubre de 2023 19:14:30
+
+A reasonable product dimension table can have 50 or more descriptive attributes. Each attribute is a rich source for constraining and constructing row header labels. Drilling down is nothing more than asking for a row header from a dimension that provides more information. Let’s
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2181-2186 | Añadido el viernes, 6 de octubre de 2023 19:15:02
+
+A reasonable product dimension table can have 50 or more descriptive attributes. Each attribute is a rich source for constraining and constructing row header labels. Drilling down is nothing more than asking for a row header from a dimension that provides more information. Let’s say you have a simple report summarizing the sales dollar amount by department. As illustrated in Figure 3-9, if you want to drill down, you can drag any other attribute, such as brand, from the product dimension into the report next to department, and you can automatically drill down to this next level of detail. You could drill down by the fat content attribute, even though it isn’t in the merchandise hierarchy rollup.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2186-2188 | Añadido el viernes, 6 de octubre de 2023 19:15:27
+
+NOTE Drilling down in a dimensional model is nothing more than adding row header attributes from the dimension tables. Drilling up is removing row headers. You can drill down or up on attributes from more than one explicit hierarchy and with attributes that are part of no hierarchy
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2201-2202 | Añadido el viernes, 6 de octubre de 2023 19:18:18
+
+Multiple Hierarchies in Dimension Tables The store dimension is the case study’s primary geographic dimension. Each store can be thought of as a location. You can roll stores up to any geographic attribute, such as ZIP code, county, and state
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2216-2216 | Añadido el sábado, 7 de octubre de 2023 01:35:03
+
+Dates Within Dimension Tables
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2216-2219 | Añadido el sábado, 7 de octubre de 2023 01:35:34
+
+The first open date and last remodel date in the store dimension could be date type columns. However, if users want to group and constrain on nonstandard calendar attributes (like the open date’s fiscal period), then they are typically join keys to copies of the date dimension table. These date dimension copies are declared in SQL by the view construct and are semantically distinct from the primary date dimension
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2225-2225 | Añadido el sábado, 7 de octubre de 2023 01:36:52
+
+Promotion Dimension
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2225-2226 | Añadido el sábado, 7 de octubre de 2023 01:37:09
+
+The promotion dimension is potentially the most interesting dimension in the retail sales schema. The promotion dimension describes the promotion conditions under which a product is sold
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2226-2227 | Añadido el sábado, 7 de octubre de 2023 01:37:38
+
+Promotion conditions include temporary price reductions, end aisle displays, newspaper ads, and coupons.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2227-2228 | Añadido el sábado, 7 de octubre de 2023 01:37:44
+
+This dimension is often called a causal dimension because it describes factors thought to cause a change in product
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2228-2228 | Añadido el sábado, 7 de octubre de 2023 01:37:53
+
+sales.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2228-2229 | Añadido el sábado, 7 de octubre de 2023 01:38:09
+
+Business analysts at both headquarters and the stores are interested in determining whether a promotion is effective. Promotions are judged on one or more of the following factors
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2230-2232 | Añadido el sábado, 7 de octubre de 2023 01:38:38
+
+Whether the products under promotion experienced a gain in sales, called lift, during the promotional period. The lift can be measured only if the store can agree on what the baseline sales of the promoted products would have been without the promotion. Baseline values can be estimated from prior sales history and, in some cases, with the help of sophisticated models.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2233-2234 | Añadido el sábado, 7 de octubre de 2023 01:39:04
+
+Whether the products under promotion showed a drop in sales just prior to or after the promotion, canceling the gain in sales during the promotion (time shifting). In other words, did you transfer sales from regularly priced products to temporarily reduced priced products?
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2235-2236 | Añadido el sábado, 7 de octubre de 2023 01:39:21
+
+Whether the products under promotion showed a gain in sales but other products nearby on the shelf showed a corresponding sales decrease (cannibalization).
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2237-2238 | Añadido el sábado, 7 de octubre de 2023 01:40:03
+
+Whether all the products in the promoted category of products experienced a net overall gain in sales taking into account the time periods before, during, and after the promotion (market growth).
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2238-2240 | Añadido el sábado, 7 de octubre de 2023 01:40:21
+
+Whether the promotion was profitable. Usually the profit of a promotion is taken to be the incremental gain in profit of the promoted category over the baseline sales taking into account time shifting and cannibalization, as well as the costs of the promotion
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2240-2247 | Añadido el sábado, 7 de octubre de 2023 01:40:58
+
+The causal conditions potentially affecting a sale are not necessarily tracked directly by the POS system. The transaction system keeps track of price reductions and markdowns. The presence of coupons also typically is captured with the transaction because the customer either presents coupons at the time of sale or does not. Ads and in-store display conditions may need to be linked from other sources. The various possible causal conditions are highly correlated. A temporary price reduction usually is associated with an ad and perhaps an end aisle display. For this reason, it makes sense to create one row in the promotion dimension for each combination of promotion conditions that occurs. Over the course of a year, there may be 1,000 ads, 5,000 temporary price reductions, and 1,000 end aisle displays, but there may be only 10,000 combinations of these three conditions affecting any particular product. For example, in a given promotion, most of the stores would run all three promotion mechanisms simultaneously, but a few of
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2240-2249 | Añadido el sábado, 7 de octubre de 2023 01:42:20
+
+The causal conditions potentially affecting a sale are not necessarily tracked directly by the POS system. The transaction system keeps track of price reductions and markdowns. The presence of coupons also typically is captured with the transaction because the customer either presents coupons at the time of sale or does not. Ads and in-store display conditions may need to be linked from other sources. The various possible causal conditions are highly correlated. A temporary price reduction usually is associated with an ad and perhaps an end aisle display. For this reason, it makes sense to create one row in the promotion dimension for each combination of promotion conditions that occurs. Over the course of a year, there may be 1,000 ads, 5,000 temporary price reductions, and 1,000 end aisle displays, but there may be only 10,000 combinations of these three conditions affecting any particular product. For example, in a given promotion, most of the stores would run all three promotion mechanisms simultaneously, but a few of the stores may not deploy the end aisle displays. In this case, two separate promotion condition rows would be needed, one for the normal price reduction plus ad plus display and one for the price reduction plus ad only. A recommended promotion dimension table is shown in Figure 3-11.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2252-2254 | Añadido el lunes, 9 de octubre de 2023 09:01:36
+
+The trade-offs in favor of keeping the four dimensions together include the following: ■ If the four causal mechanisms are highly correlated, the combined single dimension is not much larger than any one of the separated dimensions would be.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2250-2254 | Añadido el lunes, 9 de octubre de 2023 09:01:42
+
+From a purely logical point of view, you could record similar information about the promotions by separating the four causal mechanisms (price reductions, ads, displays, and coupons) into separate dimensions rather than combining them into one dimension. Ultimately, this choice is the designer’s prerogative. The trade-offs in favor of keeping the four dimensions together include the following: ■ If the four causal mechanisms are highly correlated, the combined single dimension is not much larger than any one of the separated dimensions would be.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2254-2257 | Añadido el lunes, 9 de octubre de 2023 09:02:05
+
+The combined single dimension can be browsed efficiently to see how the various price reductions, ads, displays, and coupons are used together. However, this browsing only shows the possible promotion combinations. Browsing in the dimension table does not reveal which stores or products were affected by the promotion; this information is found in the fact table
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2259-2260 | Añadido el lunes, 9 de octubre de 2023 09:02:26
+
+Figure 3-11: Promotion dimension table. The trade-offs in favor of separating the causal mechanisms into four distinct dimension tables include the following:
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2261-2261 | Añadido el lunes, 9 de octubre de 2023 09:02:32
+
+The separated dimensions may be more
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2261-2262 | Añadido el lunes, 9 de octubre de 2023 09:02:39
+
+understandable to the business community if users think of these mechanisms separately. This would be revealed during the business requirement interviews.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2263-2264 | Añadido el lunes, 9 de octubre de 2023 09:02:54
+
+Administration of the separate dimensions may be more straightforward than administering a combined dimension. Keep in mind there is no difference in the content between these two choices.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2264-2267 | Añadido el lunes, 9 de octubre de 2023 09:03:28
+
+NOTE The inclusion of promotion cost attribute in the promotion dimension should be done with careful thought. This attribute can be used for constraining and grouping. However, this cost should not appear in the POS transaction fact table representing individual product sales because it is at the wrong grain; this cost would have to reside in a fact table whose grain is the overall promotion
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2267-2267 | Añadido el lunes, 9 de octubre de 2023 09:05:24
+
+Null Foreign Keys, Attributes, and Facts
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2267-2271 | Añadido el lunes, 9 de octubre de 2023 09:07:05
+
+Typically, many sales transactions include products that are not being promoted. Hopefully, consumers aren’t just filling their shopping cart with promoted products; you want them paying full price for some products in their cart! The promotion dimension must include a row, with a unique key such as 0 or –1, to identify this no promotion condition and avoid a null promotion key in the fact table. Referential integrity is violated if you put a null in a fact table column declared as a foreign key to a dimension table. In addition to the referential integrity alarms, null keys are the source of great confusion to users because they can’t join on null keys.
+==========
+Kimball_The-Data-Warehouse-Toolkit-3rd-Edition (GUIDO PEDACCI)
+- La subrayado en la posición 2271-2273 | Añadido el lunes, 9 de octubre de 2023 09:07:24
+
+WARNING You must avoid null keys in the fact table. A proper design includes a row in the corresponding dimension table to identify that the dimension is not applicable to the measurement
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 10 | posición 111-113 | Añadido el jueves, 1 de febrero de 2024 04:58:11
+
+«John, cuando estés a las puertas de la muerte seguro que no desearás haber pasado más tiempo en la oficina.» Así que empecé a quedarme más horas en casa,
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 17 | posición 189-190 | Añadido el jueves, 1 de febrero de 2024 05:17:20
+
+Aporta un crecimiento interior y un sinfín de recompensas
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 16 | posición 188-190 | Añadido el jueves, 1 de febrero de 2024 05:18:05
+
+Todo suceso tiene un porqué y toda adversidad nos enseña una lección. He comprendido que el fracaso, sea personal, profesional o incluso espiritual, es necesario para la expansión de la persona. Aporta un crecimiento interior y un sinfín de recompensas psíquicas. Nunca lamentes tu pasado. Acéptalo como el maestro que es.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 18 | posición 206-207 | Añadido el jueves, 1 de febrero de 2024 05:20:33
+
+instinto le dijo que aquel viaje debería hacerlo solo. Y así, quizá por primera vez en su vida, prescindió de los grilletes de la razón y decidió confiar en su
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 18 | posición 206-207 | Añadido el jueves, 1 de febrero de 2024 05:20:46
+
+su instinto le dijo que aquel viaje debería hacerlo solo. Y así, quizá por primera vez en su vida, prescindió de los grilletes de la razón y decidió confiar en su intuición.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 27 | posición 319-320 | Añadido el viernes, 2 de febrero de 2024 00:20:28
+
+las disciplinas gemelas del dominio personal y la autorresponsabilidad impedirían que volviera al caos de la crisis que
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 27 | posición 319-320 | Añadido el viernes, 2 de febrero de 2024 00:20:53
+
+las disciplinas gemelas del dominio personal y la autorresponsabilidad
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 29 | posición 336-337 | Añadido el viernes, 2 de febrero de 2024 00:25:05
+
+Pero he aprendido que el autocontrol y el cuidado de la propia mente, cuerpo y alma son esenciales para encontrar el yo elevado de cada uno y para vivir la vida de nuestros sueños.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 29 | posición 337-338 | Añadido el viernes, 2 de febrero de 2024 00:25:21
+
+¿Cómo ocuparse de los demás si uno no se ocupa de sí mismo? ¿Cómo hacer el bien si ni siquiera te sientes bien? No puedo amar si no sé amarme a mí mismo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 33 | posición 387-387 | Añadido el sábado, 3 de febrero de 2024 07:34:17
+
+Empecé a comprender que el mundo al que estaba acostumbrado había embotado mi creatividad y limitado mi visión del mundo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 34 | posición 394-394 | Añadido el sábado, 3 de febrero de 2024 07:35:10
+
+Sólo cuando domines el arte de amarte a ti mismo podrás amar de verdad a los demás.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 34 | posición 394-396 | Añadido el sábado, 3 de febrero de 2024 07:35:35
+
+Sólo cuando domines el arte de amarte a ti mismo podrás amar de verdad a los demás. Sólo abriendo tu corazón podrás llegar al corazón de los demás. Cuando te sientas centrado y vivo de verdad, estarás en buena posición para ser una persona mejor. 
+–
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 35 | posición 407-409 | Añadido el sábado, 3 de febrero de 2024 07:37:15
+
+Si bien las técnicas que había llegado a dominar eran variadas, en el fondo del Método de Sivana había siete virtudes básicas, siete principios fundamentales que encarnaban las claves del autodominio, la responsabilidad personal y el esclarecimiento espiritual.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 38 | posición 445-446 | Añadido el sábado, 3 de febrero de 2024 07:46:00
+
+El jardín, el faro, el luchador de sumo, el cable de color rosa, el cronógrafo, las flores y el sinuoso sendero de los diamantes son símbolos de las siete virtudes para conseguir una vida de esclarecimiento.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 39 | posición 453-455 | Añadido el sábado, 3 de febrero de 2024 07:51:19
+
+La mayoría de la gente vive –ya sea física, intelectual o moralmente– en un círculo muy restringido de sus posibilidades. Todos nosotros tenemos reservas de vida en las que ni siquiera soñamos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 39 | posición 455-457 | Añadido el sábado, 3 de febrero de 2024 07:52:27
+
+–En la fábula, el jardín es un símbolo de la mente –explicó Julián–. Si cuidas de tu mente, si la nutres y la cultivas como si fuera un fértil jardín, florecerá más allá de tus expectativas. Pero si dejas que la maleza arraigue, nunca podrás alcanzar la paz de espíritu y la armonía interna...
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 39 | posición 460-462 | Añadido el sábado, 3 de febrero de 2024 08:04:37
+
+Pero fíjate en los residuos tóxicos que la mayoría de la gente mete en el fértil jardín de su mente, y eso un día tras otro: preocupaciones, ansiedades, la nostalgia del pasado, los cálculos sobre el futuro y los miedos que ellos mismos alimentan y que pueden destrozar el mundo interior
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 39 | posición 460-462 | Añadido el sábado, 3 de febrero de 2024 08:04:54
+
+Pero fíjate en los residuos tóxicos que la mayoría de la gente mete en el fértil jardín de su mente, y eso un día tras otro: preocupaciones, ansiedades, la nostalgia del pasado, los cálculos sobre el futuro y los miedos que ellos mismos alimentan y que pueden destrozar el mundo interior de cualquier persona.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 40 | posición 469-471 | Añadido el sábado, 3 de febrero de 2024 08:06:14
+
+»Los sabios me enseñaron que en un día normal la persona normal tiene unos sesenta mil pensamientos. Lo que a mí me chocó, sin embargo, fue que el 99 por ciento de los mismos era exactamente igual que el día anterior.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 40 | posición 471-472 | Añadido el sábado, 3 de febrero de 2024 08:07:00
+
+La gente que piensa lo mismo todos los días, cosas negativas en su mayoría, han caído en malos hábitos mentales. En vez de
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 40 | posición 471-477 | Añadido el sábado, 3 de febrero de 2024 08:07:29
+
+Es la tiranía del pensamiento empobrecido. La gente que piensa lo mismo todos los días, cosas negativas en su mayoría, han caído en malos hábitos mentales. En vez de concentrarse en las cosas buenas y pensar en cómo hacer que todo sea mejor, son cautivos de sus respectivos pasados. Unos se preocupan de fracasos sociales o problemas financieros. Otros se lamentan de sus infancias. Otros, en fin, se preocupan de asuntos más insignificantes: el modo en que un dependiente los ha tratado o el comentario malicioso de un compañero de trabajo. De ese modo permiten que las preocupaciones priven a su mente de su fuerza vital; están bloqueando el enorme potencial de la mente para aportar todo lo que ellos quieran, emocional, física y espiritualmente. Estas personas no se dan cuenta de que administrar la mente es administrar la vida.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 41 | posición 484-485 | Añadido el sábado, 3 de febrero de 2024 08:12:37
+
+Por ahora, lo más importante es que entiendas que el dominio mental se logra con entrenamiento, ni más ni menos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 42 | posición 490-491 | Añadido el sábado, 3 de febrero de 2024 08:13:42
+
+Quizá no podamos controlar el tiempo atmosférico, el tráfico o el humor de quienes nos rodean, pero ten por seguro que podemos controlar nuestra actitud hacia esos hechos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 42 | posición 494-496 | Añadido el sábado, 3 de febrero de 2024 08:15:41
+
+No existe lo que llamamos realidad objetiva o «mundo real». No existen los absolutos. El rostro de tu peor enemigo puede ser el de mi mejor amigo. Algo que parece una tragedia para alguien puede contener la semilla de una magnífica oportunidad para otro. Lo que separa de veras a las personas alegres u optimistas de las que están sumidas en la desdicha es la forma de interpretar y procesar las circunstancias de la vida.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 43 | posición 509-510 | Añadido el sábado, 3 de febrero de 2024 08:19:06
+
+No importa lo que te ocurra en la vida, porque tienes la capacidad de elegir tu reacción. Cuando consigas arraigar el hábito de buscar lo positivo en cada circunstancia, tu vida pasará a sus dimensiones superiores. Es una de las más importantes leyes naturales. 
+–
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 43 | posición 513-514 | Añadido el sábado, 3 de febrero de 2024 08:19:46
+
+mundo exterior refleja el estado del mundo interior. Controlando los pensamientos y la manera de reaccionar a los acontecimientos de la vida, uno empieza a controlar su destino.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 43 | posición 513-514 | Añadido el sábado, 3 de febrero de 2024 08:19:53
+
+El mundo exterior refleja el estado del mundo interior. Controlando los pensamientos y la manera de reaccionar a los acontecimientos de la vida, uno empieza a controlar su destino.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 44 | posición 518-520 | Añadido el sábado, 3 de febrero de 2024 08:20:44
+
+«No hay errores en la vida, sólo lecciones. No existe una experiencia negativa, sino sólo oportunidades que hay que aprovechar para avanzar por el camino del autodominio. De la lucha surge la fuerza. Incluso el dolor puede ser muy buen maestro.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 44 | posición 523-526 | Añadido el sábado, 3 de febrero de 2024 08:22:47
+
+como positivos o negativos. Limítate a experimentarlos, festejarlos y aprender de ellos. En todo hay una lección que aprender. Estas pequeñas lecciones estimulan tu mundo interior y exterior. Sin ellas no podrías avanzar. Aplícalo a tu vida actual. La mayoría de la gente ha sacado lo mejor de sí misma a través de las experiencias más sugestivas y difíciles. Si te encuentras con un resultado que no esperabas y te sientes decepcionado, recuerda que las leyes de la naturaleza especifican que cuando una puerta se cierra otra se abre.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 44 | posición 522-526 | Añadido el sábado, 3 de febrero de 2024 08:22:58
+
+Pero te sugiero que no juzgues los hechos como positivos o negativos. Limítate a experimentarlos, festejarlos y aprender de ellos. En todo hay una lección que aprender. Estas pequeñas lecciones estimulan tu mundo interior y exterior. Sin ellas no podrías avanzar. Aplícalo a tu vida actual. La mayoría de la gente ha sacado lo mejor de sí misma a través de las experiencias más sugestivas y difíciles. Si te encuentras con un resultado que no esperabas y te sientes decepcionado, recuerda que las leyes de la naturaleza especifican que cuando una puerta se cierra otra se abre.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 45 | posición 531-535 | Añadido el sábado, 3 de febrero de 2024 08:31:16
+
+Para liberar todo el potencial de tu mente, tu cuerpo y tu alma, primero debes expandir tu imaginación. Verás, las cosas son creadas dos veces: primero en el taller de la mente y después en la realidad. Yo llamo a este proceso el «cianotipo» porque todo lo que creas en tu mundo exterior empieza como una simple cianocopia en tu mundo interior, en la exuberante pantalla de tu mente. Cuando aprendas a controlar tus pensamientos y sepas imaginar gráficamente todo lo que deseas de esta vida terrenal en un estado de absoluta expectativa, las fuerzas dormidas empezarán a despertar en ti.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 45 | posición 536-537 | Añadido el sábado, 3 de febrero de 2024 08:31:44
+
+De hoy en adelante, olvida el pasado. Atrévete a soñar que eres más que la suma de tus actuales circunstancias. Excepto de las mejores. Te sorprenderán los resultados.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 48 | posición 565-568 | Añadido el sábado, 3 de febrero de 2024 08:52:19
+
+Cuando te inspira un objetivo importante, un proyecto extraordinario, todos tus pensamientos rompen sus ataduras: tu mente supera los límites, tu conciencia se expande en todas direcciones y tú te ves en un mundo nuevo y maravilloso. Las fuerzas, facultades y talentos ocultos cobran vida, y descubres que eres una persona mejor de lo que habías soñado ser.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 48 | posición 575-575 | Añadido el sábado, 3 de febrero de 2024 08:53:31
+
+Winston Churchill dijo que «el precio de la grandeza es la responsabilidad sobre cada uno de tus pensamientos».
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 49 | posición 578-581 | Añadido el sábado, 3 de febrero de 2024 08:56:04
+
+tu mente podrá hacer cosas maravillosas si le facilitas las cosas. Debes aprender a hacerla funcionar de manera efectiva. La salud ideal llegará si sabes cuidar de tu mente. Y el estado natural de tranquilidad y serenidad llegará por sí solo... si tienes la capacidad de reclamarlo. Los Sabios de Sivana tienen un dicho: «Las fronteras de la vida son sólo creaciones del yo.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 49 | posición 581-583 | Añadido el sábado, 3 de febrero de 2024 08:59:10
+
+Los pensadores más ilustres saben que sus pensamientos conforman su mundo y que la calidad de la vida se reduce a la riqueza de los pensamientos. Si quieres vivir una vida más serena y con más significado, debes producir pensamientos más serenos y con más significado.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 49 | posición 586-586 | Añadido el sábado, 3 de febrero de 2024 08:59:51
+
+La perseverancia es la madre del cambio personal.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 50 | posición 598-598 | Añadido el sábado, 3 de febrero de 2024 09:02:05
+
+pura y dura insistencia. 
+–¿Qué es la suerte, John? –replicó él afablemente–. Nada
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 50 | posición 598-599 | Añadido el sábado, 3 de febrero de 2024 09:02:12
+
+¿Qué es la suerte, John? –replicó él afablemente–. Nada más que la suma de preparación y oportunidad.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 50 | posición 599-600 | Añadido el sábado, 3 de febrero de 2024 09:03:27
+
+Antes de darte los métodos que me enseñaron los Sabios de Sivana, debo hacerte partícipe de un par de principios básicos. Primero, recuerda que la concentración es la base del dominio de la mente.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 51 | posición 612-613 | Añadido el sábado, 3 de febrero de 2024 09:05:33
+
+Cuando concentres tu poder en objetivos definidos y válidos, prenderás rápidamente las llamas de tu potencialidad para producir resultados sorprendentes.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 52 | posición 620-620 | Añadido el sábado, 3 de febrero de 2024 09:07:07
+
+El secreto de la felicidad es simple: averigua qué es lo que te gusta hacer y dirige todas tus energías en esa dirección.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 52 | posición 620-623 | Añadido el sábado, 3 de febrero de 2024 09:07:24
+
+Si analizas a las personas más felices, saludables y satisfechas de tu mundo, verás que todas han encontrado cuál era su pasión y luego se han dedicado a perseguirla. Esta vocación suele ser casi siempre la de servir a los demás. En cuanto concentres tu poder mental en conseguir lo que amas, la abundancia inundará tu vida y todos tus deseos serán satisfechos sin esfuerzo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 52 | posición 624-625 | Añadido el sábado, 3 de febrero de 2024 09:07:53
+
+Ya he dicho, John, que tu pasión debe mejorar la vida de los demás o servirla de alguna manera
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 53 | posición 626-630 | Añadido el sábado, 3 de febrero de 2024 09:08:54
+
+Primero descubre cuál es la misión de tu vida, así despertarás cada mañana con una reserva ilimitada de energía y entusiasmo. Todos tus pensamientos estarán concentrados en tu objetivo. No tendrás tiempo para perder el tiempo. El poder de la mente, por tanto, no se malgastará en pensamientos insignificantes. Automáticamente, borrarás el hábito de preocuparte y te volverás mucho más eficaz y productivo. Aún más, tendrás un profundo sentido de la armonía interna, como si algo te guiara para realizar tu misión en la vida. Es una sensación maravillosa. A mí me encanta. 
+–
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 54 | posición 642-643 | Añadido el sábado, 3 de febrero de 2024 09:11:21
+
+Las preocupaciones hacen que tu preciosa energía mental tenga fugas, igual que el aire al escaparse de un neumático. Al final te quedas sin energía. Toda tu creatividad, tu optimismo y tu motivación han desaparecido, dejándote exhausto.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 55 | posición 650-654 | Añadido el sábado, 3 de febrero de 2024 09:13:03
+
+No estoy diciendo que hayas de abandonar la profesión mañana mismo. Pero sí que debes empezar a correr riesgos. Dale un meneo a tu vida. Deshazte de las telarañas. Toma el camino menos trillado. En su mayoría, la gente vive dentro de los confines de su zona de confort. El yogui Raman fue el primero en explicarme que lo mejor que uno puede hacer por sí mismo es traspasar las fronteras regularmente. Es el camino para el dominio personal y para asimilar el verdadero potencial de tus dones humanos. 
+–
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 55 | posición 650-654 | Añadido el sábado, 3 de febrero de 2024 12:54:46
+
+No estoy diciendo que hayas de abandonar la profesión mañana mismo. Pero sí que debes empezar a correr riesgos. Dale un meneo a tu vida. Deshazte de las telarañas. Toma el camino menos trillado. En su mayoría, la gente vive dentro de los confines de su zona de confort. El yogui Raman fue el primero en explicarme que lo mejor que uno puede hacer por sí mismo es traspasar las fronteras regularmente. Es el camino para el dominio personal y para asimilar el verdadero potencial de tus dones humanos. 
+–¿Que podrían ser...? 
+–Tu mente, tu cuerpo y tu alma.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 55 | posición 660-662 | Añadido el sábado, 3 de febrero de 2024 12:57:03
+
+Los Sabios de Sivana siempre se tomaban un tiempo para meditar en silencio sobre dónde estaban, pero también sobre adonde iban. Dedicaban tiempo a reflexionar sobre su misión en la vida y su manera de vivirla. Es más, pensaban profundamente sobre cómo mejorar día a día. Las mejoras diarias producen resultados duraderos que, a su vez, conducen a cambios positivos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 55 | posición 662-664 | Añadido el sábado, 3 de febrero de 2024 12:57:15
+
+Entonces ¿debo reflexionar sobre mi vida con regularidad? 
+–Sí. Incluso diez minutos de reflexión diaria pueden tener un profundo impacto sobre la calidad de tu vida. 
+–Comprendo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 55 | posición 662-667 | Añadido el sábado, 3 de febrero de 2024 12:57:49
+
+Entonces ¿debo reflexionar sobre mi vida con regularidad? 
+–Sí. Incluso diez minutos de reflexión diaria pueden tener un profundo impacto sobre la calidad de tu vida. 
+–Comprendo. El problema es que, cuando el día se me pone cuesta arriba, ni siquiera encuentro diez minutos para comer. 
+–Amigo mío, decir que no tienes tiempo para mejorar tus pensamientos es como decir que no tienes tiempo para echar gasolina porque estás demasiado ocupado conduciendo. 
+–Sí. Oye, decías que ibas a enseñarme algunas técnicas –observé, esperando conocer alguna manera práctica de aplicar los conocimientos de Julián.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 56 | posición 667-669 | Añadido el sábado, 3 de febrero de 2024 12:58:16
+
+Los Sabios de Sivana la compartieron conmigo con gran fe y confianza. Después de practicarla durante veintiún días, me sentí más enérgico, entusiasta y dinámico de lo que me había sentido en muchos años. Es una técnica que tiene más de cuatro mil años. Se llama el Corazón de la
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 56 | posición 667-669 | Añadido el sábado, 3 de febrero de 2024 12:58:54
+
+Hay una técnica para dominar la mente que supera a todas las demás. Los Sabios de Sivana la compartieron conmigo con gran fe y confianza. Después de practicarla durante veintiún días, me sentí más enérgico, entusiasta y dinámico de lo que me había sentido en muchos años. Es una técnica que tiene más de cuatro mil años. Se llama el Corazón de la Rosa.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 56 | posición 669-675 | Añadido el sábado, 3 de febrero de 2024 13:00:11
+
+–Lo único que se requiere para este ejercicio es una rosa fresca y un lugar silencioso. Los entornos naturales son lo mejor, pero una habitación tranquila también sirve. Empieza mirando al centro de la rosa, a su corazón. El yogui Raman me dijo que una rosa es muy parecida a la vida: encontrarás espinas por el camino, pero si tienes fe y crees en tus sueños acabarás cruzando las espinas para llegar al corazón de la flor. Sigue mirando la rosa. Fíjate en su color, textura y diseño. Saborea su fragancia y piensa únicamente en el objeto que tienes ante ti. Al principio notarás que otros pensamientos te distraen. Es el síntoma de una mente mal entrenada. Pero no te apures, porque la cosa mejorará enseguida. Vuelve tu atención al objeto en que estás fijándote; tu mente no tardará en volverse fuerte y disciplinada.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 56 | posición 676-676 | Añadido el sábado, 3 de febrero de 2024 13:17:21
+
+Sin embargo, para que sea efectivo este ritual debe realizarse a diario.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 57 | posición 682-683 | Añadido el sábado, 3 de febrero de 2024 14:15:19
+
+«No hay que dejar que el reloj y el calendario nos impidan ver que cada momento de la vida es un milagro ... y un misterio.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 58 | posición 699-706 | Añadido el sábado, 3 de febrero de 2024 14:21:58
+
+El proceso es muy simple: cuando un pensamiento indeseable ocupe el punto focal de tu mente, sustitúyelo de inmediato por un pensamiento ejemplar. Es como si tu mente fuera un enorme proyector de diapositivas, y cada pensamiento una transparencia. Cuando en la pantalla aparezca una transparencia negativa, sustitúyela por una positiva. 
+»Ahí es donde entra en juego mi collar de cuentas –añadió Julián con creciente entusiasmo–. Cada vez que tengo un pensamiento negativo, me quito este collar y arranco una cuenta. Las cuentas de la preocupación van a un bote que llevo en la mochila. Ambas cosas me sirven para recordar que aún he de recorrer cierta distancia para llegar al dominio mental y que soy responsable de los pensamientos que llenan mi mente. 
+–¡Me gusta! Esto sí que es práctico. Nunca había oído nada igual. Dime más cosas sobre la filosofía del Pensamiento Opuesto. 
+–Te pondré un ejemplo real. Supongamos que has tenido un día horrible en el tribunal
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 58 | posición 699-701 | Añadido el sábado, 3 de febrero de 2024 14:22:12
+
+El proceso es muy simple: cuando un pensamiento indeseable ocupe el punto focal de tu mente, sustitúyelo de inmediato por un pensamiento ejemplar. Es como si tu mente fuera un enorme proyector de diapositivas, y cada pensamiento una transparencia. Cuando en la pantalla aparezca una transparencia negativa, sustitúyela por una positiva.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 59 | posición 705-705 | Añadido el sábado, 3 de febrero de 2024 22:29:33
+
+la filosofía del Pensamiento Opuesto.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 59 | posición 710-713 | Añadido el sábado, 3 de febrero de 2024 22:30:41
+
+Siéntate erguido, respira profundamente y dirige el poder de tu mente hacia pensamientos positivos. En cuestión de minutos notarás una clara diferencia en tu estado de ánimo. Es más, si sigues practicando el Pensamiento Opuesto y lo aplicas a cada pensamiento negativo que acuda a tu mente, dentro de unas semanas verás que ya no tienen ningún poder sobre ella.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 59 | posición 705-706 | Añadido el sábado, 3 de febrero de 2024 22:30:52
+
+Te pondré un ejemplo real. Supongamos que has tenido un día horrible en el tribunal
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 59 | posición 705-706 | Añadido el sábado, 3 de febrero de 2024 22:31:02
+
+Te pondré un ejemplo real. Supongamos que has tenido un día horrible en el tribunal.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 59 | posición 705-706 | Añadido el sábado, 3 de febrero de 2024 22:31:18
+
+Te pondré un ejemplo real. Supongamos que has tenido un día horrible en el tribunal.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 59 | posición 706-713 | Añadido el sábado, 3 de febrero de 2024 22:31:26
+
+El juez no coincide con tu interpretación de la ley y tu cliente está más que enfadado con tu actuación. Llegas a casa y te derrumbas en un sillón, de muy mal humor. El primer paso es darse cuenta de que tienes esos pensamientos pesimistas. El autoconocimiento es el primer paso hacia el autodominio. El segundo paso consiste en comprender que con la misma facilidad que has dejado entrar en tu mente esos pensamientos pesimistas, puedes reemplazarlos por pensamientos alegres. Piensa en lo contrario. Concéntrate en ser alegre y activo. Siente que eres feliz. Puede que incluso empieces a sonreír. Mueve tu cuerpo como cuando estás contento y entusiasmado. Siéntate erguido, respira profundamente y dirige el poder de tu mente hacia pensamientos positivos. En cuestión de minutos notarás una clara diferencia en tu estado de ánimo. Es más, si sigues practicando el Pensamiento Opuesto y lo aplicas a cada pensamiento negativo que acuda a tu mente, dentro de unas semanas verás que ya no tienen ningún poder sobre ella.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 59 | posición 706-718 | Añadido el sábado, 3 de febrero de 2024 22:32:19
+
+El juez no coincide con tu interpretación de la ley y tu cliente está más que enfadado con tu actuación. Llegas a casa y te derrumbas en un sillón, de muy mal humor. El primer paso es darse cuenta de que tienes esos pensamientos pesimistas. El autoconocimiento es el primer paso hacia el autodominio. El segundo paso consiste en comprender que con la misma facilidad que has dejado entrar en tu mente esos pensamientos pesimistas, puedes reemplazarlos por pensamientos alegres. Piensa en lo contrario. Concéntrate en ser alegre y activo. Siente que eres feliz. Puede que incluso empieces a sonreír. Mueve tu cuerpo como cuando estás contento y entusiasmado. Siéntate erguido, respira profundamente y dirige el poder de tu mente hacia pensamientos positivos. En cuestión de minutos notarás una clara diferencia en tu estado de ánimo. Es más, si sigues practicando el Pensamiento Opuesto y lo aplicas a cada pensamiento negativo que acuda a tu mente, dentro de unas semanas verás que ya no tienen ningún poder sobre ella. 
+Julián prosiguió su explicación. 
+–Los pensamientos son cosas vivas, núcleos de energía, si lo prefieres. La mayoría de la gente no se para a pensar en la naturaleza de sus pensamientos y, sin embargo, la calidad de lo que piensas determina la calidad de tu vida. Los pensamientos forman parte del mundo material lo mismo que el lago al que vas a nadar o la calle por la que caminas. Las mentes débiles originan actos débiles. Una mente fuerte, disciplinada, que cualquiera puede conseguir mediante la práctica diaria, puede obrar milagros. Si quieres vivir la vida al máximo, cuida de tus pensamientos como cuidarías tus más preciadas posesiones. Esfuérzate por eliminar toda turbulencia interna. Las recompensas serán abundantes.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 59 | posición 706-721 | Añadido el sábado, 3 de febrero de 2024 22:33:51
+
+El juez no coincide con tu interpretación de la ley y tu cliente está más que enfadado con tu actuación. Llegas a casa y te derrumbas en un sillón, de muy mal humor. El primer paso es darse cuenta de que tienes esos pensamientos pesimistas. El autoconocimiento es el primer paso hacia el autodominio. El segundo paso consiste en comprender que con la misma facilidad que has dejado entrar en tu mente esos pensamientos pesimistas, puedes reemplazarlos por pensamientos alegres. Piensa en lo contrario. Concéntrate en ser alegre y activo. Siente que eres feliz. Puede que incluso empieces a sonreír. Mueve tu cuerpo como cuando estás contento y entusiasmado. Siéntate erguido, respira profundamente y dirige el poder de tu mente hacia pensamientos positivos. En cuestión de minutos notarás una clara diferencia en tu estado de ánimo. Es más, si sigues practicando el Pensamiento Opuesto y lo aplicas a cada pensamiento negativo que acuda a tu mente, dentro de unas semanas verás que ya no tienen ningún poder sobre ella. 
+Julián prosiguió su explicación. 
+–Los pensamientos son cosas vivas, núcleos de energía, si lo prefieres. La mayoría de la gente no se para a pensar en la naturaleza de sus pensamientos y, sin embargo, la calidad de lo que piensas determina la calidad de tu vida. Los pensamientos forman parte del mundo material lo mismo que el lago al que vas a nadar o la calle por la que caminas. Las mentes débiles originan actos débiles. Una mente fuerte, disciplinada, que cualquiera puede conseguir mediante la práctica diaria, puede obrar milagros. Si quieres vivir la vida al máximo, cuida de tus pensamientos como cuidarías tus más preciadas posesiones. Esfuérzate por eliminar toda turbulencia interna. Las recompensas serán abundantes. 
+–Nunca he considerado los pensamientos como algo vivo, Julián –dije– . Pero sí veo cómo influyen en todos los elementos de mi mundo. 
+–Los Sabios de Sivana creían firmemente que uno debería pensar sólo pensamientos puros o sattvic. Llegaron a ese estado mediante las técnicas que acabo de explicar, además de otras prácticas tales como seguir una dieta natural, repetir afirmaciones positivas o «mantras», leer libros ricos en sabiduría y asegurarse siempre de estar en compañía de personas esclarecidas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 61 | posición 737-737 | Añadido el sábado, 3 de febrero de 2024 22:35:50
+
+Secreto del Lago.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 62 | posición 743-747 | Añadido el sábado, 3 de febrero de 2024 22:37:06
+
+los sabios observaban las aguas del lago e imaginaban sus sueños convertidos en realidad. Si era la virtud de la disciplina lo que deseaban cultivar interiormente, se imaginaban a sí mismos levantándose con el alba, realizando su riguroso régimen físico y pasando días enteros en silencio para robustecer su fuerza de voluntad. Si lo que buscaban era más alegría, miraban el lago y se imaginaban riendo o sonriendo cada vez que encontraban a un hermano o hermana. Si deseaban coraje, se imaginaban actuando con determinación en un momento de crisis.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 63 | posición 756-757 | Añadido el domingo, 4 de febrero de 2024 23:02:43
+
+maravillosas empiezan a ocurrir en tu vida. Einstein dijo que "la imaginación es más importante que el saber". Debes emplear un rato cada día, aunque sean sólo unos minutos,
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 63 | posición 756-758 | Añadido el domingo, 4 de febrero de 2024 23:02:59
+
+Einstein dijo que "la imaginación es más importante que el saber". Debes emplear un rato cada día, aunque sean sólo unos minutos, para practicar la visión creativa. Imagínate cómo te gustaría ser, ya sea un gran juez, un gran padre o un gran ciudadano de tu comunidad.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 63 | posición 764-770 | Añadido el domingo, 4 de febrero de 2024 23:04:49
+
+»La magia de la visualización puede ser aplicada a muchas situaciones. Puedes usarla para ser más eficaz en el tribunal, para reforzar tus relaciones y desarrollarte espiritualmente. Un uso continuado de este método te reportará también recompensas económicas, si es que eso te importa. Comprende de una vez por todas que tu mente tiene el poder magnético de atraer hacia tu vida todo aquello que deseas conseguir. Si existe alguna merma en tu vida es porque hay una merma en tus pensamientos. Pon imágenes maravillosas en los ojos de tu mente. Una sola imagen negativa puede envenenar tu actitud mental. En cuanto empieces a experimentar la alegría que aporta esta técnica antiquísima, comprenderás el enorme potencial de tu mente y empezarás a liberar tus provisiones de energía y capacidad que ahora están dormidas en tu interior.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 65 | posición 782-782 | Añadido el domingo, 4 de febrero de 2024 23:06:44
+
+«No hay nada noble en ser superior a otra persona. La verdadera nobleza radica en ser superior a tu antiguo yo.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 65 | posición 788-790 | Añadido el domingo, 4 de febrero de 2024 23:08:29
+
+En general, la fatiga es una creación de la mente. La fatiga domina las vidas de quienes viven sin rumbo y sin sueños. Permíteme un ejemplo. ¿Alguna vez has pasado una tarde en tu oficina leyendo tus áridos informes y tu mente ha empezado a divagar y te ha entrado sueño?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 66 | posición 792-793 | Añadido el domingo, 4 de febrero de 2024 23:08:55
+
+duda de que reaccionarías enseguida. Tu fatiga
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 66 | posición 791-793 | Añadido el domingo, 4 de febrero de 2024 23:09:09
+
+trabajamos. 
+–Pero si un amigo te llama por teléfono para preguntarte si quieres ir al partido de béisbol o te pide consejo sobre su forma de jugar al golf, no me cabe duda de que reaccionarías enseguida. Tu fatiga desaparecería inmediatamente. ¿Me equivoco?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 66 | posición 794-798 | Añadido el domingo, 4 de febrero de 2024 23:09:47
+
+Entonces, tu cansancio no era más que una creación mental, un mal hábito que tu mente ha venido cultivando a modo de muletas para cuando haces una tarea tediosa. Esta noche mi historia te ha encantado y estás ansioso por aprender lo que yo aprendí. Tu interés y tu concentración mental te dan energía. Esta noche, tu mente no ha estado en el pasado ni en el futuro. Al contrario, ha estado firmemente anclada en el presente, en nuestra conversación. Cuando aprendas a concentrar tus pensamientos en el presente, tu energía no conocerá límites, independientemente de la hora que señale el reloj.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 67 | posición 803-804 | Añadido el lunes, 5 de febrero de 2024 19:49:05
+
+Las técnicas: • El Corazón de la Rosa 
+• Pensamiento Opuesto 
+• El Secreto del Lago
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 69 | posición 823-824 | Añadido el lunes, 5 de febrero de 2024 19:51:13
+
+Básicamente, los sabios del Himalaya se guiaban por una regla muy sencilla: el que más sirve más cosecha, emocional, física, mental y espiritualmente. Éste es el camino hacia la paz interior y la realización exterior.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 70 | posición 831-835 | Añadido el lunes, 5 de febrero de 2024 19:53:21
+
+»Recordarás que en mitad del jardín había un imponente faro. Este símbolo sirve como recordatorio de otro viejo principio para una vida esclarecida: el propósito de la vida es una vida con propósito. Los verdaderamente esclarecidos saben lo que quieren obtener de la vida, emocional, material, física y espiritualmente. Definir claramente tus prioridades en cada aspecto de tu vida jugará un papel similar al del faro, ofrecerte orientación y refugio cuando la mar se vuelva brava. Mira, John, cualquiera puede revolucionar su vida si primero revoluciona la dirección hacia la que se mueve.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 70 | posición 835-835 | Añadido el lunes, 5 de febrero de 2024 19:53:35
+
+Pero si no sabes siquiera adonde vas, ¿cómo saber si has llegado?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 70 | posición 836-838 | Añadido el lunes, 5 de febrero de 2024 19:54:07
+
+Recordaba exactamente las palabras del sabio: «La vida es extraña –decía el yogui Raman–. Cabría pensar que cuanto menos trabaja uno más posibilidades tiene de experimentar la felicidad. Sin embargo, la verdadera fuente de la felicidad puede concretarse en una palabra: realizacíón.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 70 | posición 838-839 | Añadido el lunes, 5 de febrero de 2024 19:55:06
+
+La felicidad duradera se consigue trabajando constantemente para alcanzar tus objetivos y avanzar en la dirección que te has fijado. No hay otro secreto para atizar el fuego que tienes agazapado dentro de ti.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 71 | posición 847-850 | Añadido el lunes, 5 de febrero de 2024 19:57:21
+
+"En Sivana, donde el tiempo parece detenerse, tal vez te preguntes qué puede esperar alcanzar un grupo de sabios sin posesiones materiales. Pero lo que uno persigue no ha de ser necesariamente algo material. Personalmente, mis objetivos son conseguir la serenidad, el autodominio y el esclarecimiento. Si cuando llegue al final de mi vida he fracasado en ello, seguro que moriré insatisfecho."
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 71 | posición 852-859 | Añadido el lunes, 5 de febrero de 2024 20:01:12
+
+Yo creo que cuando uno sabe con claridad qué objetivos desea alcanzar en el curso de su vida, ya sean materiales, emocionales, físicos o espirituales, al final encuentra la alegría eterna. Tu vida será tan placentera como la mía, estoy seguro de que conocerás una espléndida realidad. Pero has de saber cuál es el propósito de tu vida y pasar esa visión al campo de la realidad mediante la acción consecuente. Los sabios lo llamamos dharma, que es como se dice en sánscrito "el propósito de la vida".» ¿La satisfacción se derivará del hecho de realizar mi dharma?, le pregunté. «Desde luego. Del dharma salen la armonía interior y la satisfacción duradera. El dharma se basa en el antiguo principio según el cual cada uno de nosotros tiene una misión heroica aquí en la tierra. A todos se nos ha concedido una serie única de dones y talentos que nos permitirán realizar nuestra tarea terrenal. La clave está en descubrirlos y, de paso, descubrir cuál es el objetivo prioritario.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 72 | posición 860-863 | Añadido el lunes, 5 de febrero de 2024 20:17:16
+
+puede parecer que estás obligado a correr ciertos riesgos para descubrir qué se te da mejor y cuál es la esencia de tu vida. Muchas personas dejan empleos que han estado impidiendo su progreso en cuanto descubren el verdadero objeto de su existencia. Todo autoexamen entraña un peligro. Pero no existe riesgo alguno en descubrirse a sí mismo y la misión que uno tiene en la vida. El autoconocimiento es el ADN del autoesclarecimiento. Es algo muy bueno y, desde luego, esencial.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 72 | posición 864-864 | Añadido el lunes, 5 de febrero de 2024 20:17:36
+
+sencillo: servir a los demás desinteresadamente. Recuerda, no hay alegría verdadera en el dormir, en relajarse o en haraganear.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 72 | posición 865-865 | Añadido el lunes, 5 de febrero de 2024 20:17:52
+
+«El secreto del éxito es la constancia en los propósitos.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 72 | posición 865-869 | Añadido el lunes, 5 de febrero de 2024 20:18:27
+
+La felicidad que estás buscando vendrá a través de la reflexión sobre los objetivos que te hayas marcado, de las medidas que tomes a diario para conseguirlos. Se trata de una aplicación directa de la vieja filosofía que prescribe que las cosas más importantes nunca deben ser sacrificadas a las cosas menos importantes. El faro de la fábula te servirá para recordarte el poder de marcarse objetivos claramente definidos y, lo más importante, de tener la fuerza de carácter necesaria para obrar en consecuencia.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 73 | posición 869-873 | Añadido el lunes, 5 de febrero de 2024 20:19:42
+
+Julián que las personas más desarrolladas y realizadas comprenden la importancia de explorar sus talentos, averiguar su propósito personal y aplicar sus dones humanos en esa dirección. Hay personas que sirven desinteresadamente a la humanidad como médicos, otros lo hacen como artistas. Algunos descubren que son grandes comunicadores y se convierten en maestros maravillosos, mientras que otros acaban viendo que su legado tendrá la forma de innovaciones en el campo de los negocios o la ciencia. La clave está en tener la disciplina y la visión necesarias para ver cuál es tu misión heroica y asegurarte de que sirva a los demás.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 73 | posición 874-875 | Añadido el lunes, 5 de febrero de 2024 20:20:06
+
+Fijarse metas es el punto de partida. Proyectar tus objetivos libera los jugos creativos que te ponen en el camino de tu finalidad en la vida. Lo creas o no, el yogui Raman y los otros sabios eran muy exigentes en sus metas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 75 | posición 896-896 | Añadido el lunes, 5 de febrero de 2024 20:22:36
+
+es imposible dar a un blanco que no puedes ver.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 75 | posición 896-899 | Añadido el lunes, 5 de febrero de 2024 20:23:05
+
+La gente se pasa la vida soñando con ser más feliz, vivir con más vitalidad y tener abundancia de pasión y dinamismo. Pero no ven la importancia de invertir aunque sólo sea diez minutos al mes en escribir cuáles son sus metas y pensar en el significado de sus vidas, en el dharma. Fijarte objetivos cambiará radicalmente tu vida. Tu mundo se volverá más pleno, más placentero y más mágico
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 75 | posición 899-901 | Añadido el lunes, 5 de febrero de 2024 22:12:47
+
+. 
+»Mira, Julián, nuestros antepasados nos enseñaron que marcarse objetivos claramente definidos es básico para conseguir lo que deseamos. De donde tú vienes, la gente se marca objetivos materiales. Eso no tiene nada de malo, si es lo que uno más valora en la vida. Sin embargo, para alcanzar el autodominio y el esclarecimiento interior, debes también fijarte objetivos en otros campos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 75 | posición 901-903 | Añadido el lunes, 5 de febrero de 2024 22:13:07
+
+¿Te sorprendería saber que yo tengo objetivos claramente definidos con respecto a la tranquilidad de ánimo, la energía cotidiana y el amor hacia cuantos me rodean?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 75 | posición 903-904 | Añadido el lunes, 5 de febrero de 2024 22:13:28
+
+Fijarse metas no es únicamente para abogados como tú que viven en un mundo lleno de atractivos materiales. Cualquiera que desee mejorar la calidad de su mundo interior y exterior hará bien en agarrar un papel y ponerse a escribir sus objetivos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 76 | posición 914-914 | Añadido el lunes, 5 de febrero de 2024 22:14:47
+
+misil. De hecho es un proceso científico. La mayoría
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 76 | posición 909-914 | Añadido el lunes, 5 de febrero de 2024 22:15:01
+
+¿Qué tiene de especial poner por escrito tus objetivos? ¿Cómo puede algo tan simple ser tan decisivo? –pregunté. 
+–Tu evidente interés me sirve de inspiración –dijo Julián, complacido–. El entusiasmo es una de las claves para una vida de éxito, y me alegra comprobar que aún conservas el tuyo. Antes te enseñé que cada uno de nosotros tiene unos sesenta mil pensamientos al día por término medio. Anotando tus deseos y objetivos en un papel, lo que haces es ondear una bandera roja para que tu subconsciente sepa que este pensamiento es más importante que los otros 59.999. Tu mente, por lo tanto, empezará a buscar la realización de tu destino como si fuera un misil. De hecho es un proceso científico. La mayoría de las personas no es consciente de ello.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 77 | posición 922-925 | Añadido el lunes, 5 de febrero de 2024 22:16:46
+
+Concentra hasta el último gramo de tu energía mental en descubrirte a ti mismo. Aprende en qué destacas y qué te hace feliz. A lo mejor, dada tu paciencia y lo que te encanta enseñar, deberías ser maestro de escuela. Quizá eres un pintor o un escultor frustrado. Sea como sea, busca tu pasión y lánzate a ella. 
+–Ahora que lo pienso bien, sería muy triste llegar al cabo de mi vida sin darme cuenta de que tenía un don especial que hubiera podido liberar el potencial de mi mente y ayudar a los demás... aunque fuera un poco.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 79 | posición 941-943 | Añadido el lunes, 5 de febrero de 2024 22:19:59
+
+Para dominar el arte de marcarse y conseguir objetivos hay que empezar por cosas pequeñas. Es más, ejercitarse en lograr pequeñas hazañas te prepara para abordar las grandes. Bien, y respondiendo a tu pregunta, no hay nada malo en proyectar una serie de pequeños objetivos mientras uno planifica los más importantes.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 79 | posición 944-948 | Añadido el lunes, 5 de febrero de 2024 22:20:45
+
+los Sabios de Sivana habían creado un método de cinco pasos para hacer realidad el propósito de sus vidas. Era un método sencillo y práctico, y funcionaba. El primer paso era formarse una clara imagen mental del resultado. Julián me dijo que, si se trataba de perder peso, yo debía visualizarme cada mañana, recién levantado, como una persona delgada, en forma, llena de vitalidad y energía. Cuanto más clara fuese la imagen mental, más efectivo sería el proceso. Dijo que la mente es una verdadera mina de poder y que este simple imaginar mi objetivo abriría las puertas para la consecución de mi deseo. El segundo paso consistía en someterme a mí mismo a presiones positivas. –
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 80 | posición 954-959 | Añadido el lunes, 5 de febrero de 2024 22:22:37
+
+En Sivana, mis maestros empleaban medios más drásticos para concitar esa presión positiva. Se decían unos a otros que de no cumplir sus compromisos, como ayunar una semana o levantarse cada día a las cuatro para meditar, bajarían a la cascada y se pondrían bajo el agua helada hasta que se les entumecieran las extremidades. Esto es un ejemplo límite del poder de la presión a la hora de forjarse buenos hábitos.
+–Ejemplo límite me parece una manera muy suave de llamarlo, Julián. ¡Qué extravagante ritual!
+–Pero extraordinariamente efectivo. Fíjate que si entrenas a tu mente para que asocie el placer con los buenos hábitos y el castigo con los malos, tus flaquezas caerán muy pronto.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 79 | posición 948-959 | Añadido el lunes, 5 de febrero de 2024 22:22:55
+
+La razón principal de que la gente no persevere en las cosas que se propone es que es muy fácil caer en los viejos hábitos. La presión no es siempre algo malo. Puede inspirarte para alcanzar grandes cosas. La gente suele conseguir cosas importantes cuando está entre la espada y la pared y se la obliga a echar mano del potencial que lleva en su interior. 
+–¿Cómo puedo yo crear esa presión positiva? –pregunté pensando ya en las posibilidades de aplicar este método a todo, desde levantarme más temprano a ser un padre más paciente y afectuoso. 
+–Hay muchas maneras. Una de las mejores es el compromiso público. Di a todo el mundo que sabes que vas a perder esos kilos de más o escribir esa novela o cualquier otro objetivo que te hayas marcado. Una vez hagas pública tu meta, verás que la presión te estimula a trabajar en la dirección fijada, pues a nadie le gusta parecer un fracasado. En Sivana, mis maestros empleaban medios más drásticos para concitar esa presión positiva. Se decían unos a otros que de no cumplir sus compromisos, como ayunar una semana o levantarse cada día a las cuatro para meditar, bajarían a la cascada y se pondrían bajo el agua helada hasta que se les entumecieran las extremidades. Esto es un ejemplo límite del poder de la presión a la hora de forjarse buenos hábitos.
+–Ejemplo límite me parece una manera muy suave de llamarlo, Julián. ¡Qué extravagante ritual!
+–Pero extraordinariamente efectivo. Fíjate que si entrenas a tu mente para que asocie el placer con los buenos hábitos y el castigo con los malos, tus flaquezas caerán muy pronto.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 80 | posición 959-962 | Añadido el lunes, 5 de febrero de 2024 22:23:41
+
+Has dicho que había que seguir cinco pasos para realizar mis deseos –dije impaciente–. ¿Cuáles son los tres restantes? 
+–Sí, John. El primer paso es tener una visión clara del resultado. El se
+gundo es crear una presión positiva que te sirva de inspiración. El tercer paso es muy simple: nunca te marques una meta sin fijar un plazo.
+Para insuflar vida a un objetivo, has de fijarle un plazo muy preciso.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 81 | posición 970-970 | Añadido el lunes, 5 de febrero de 2024 22:25:06
+
+sociales y de relación y, tal
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 81 | posición 965-971 | Añadido el lunes, 5 de febrero de 2024 22:25:23
+
+¿No me conozco aún? 
+–La mayoría de la gente no se conoce. No se han tomado el tiempo de
+analizar sus flaquezas y sus puntos fuertes, sus esperanzas y sus sueños. Según los chinos, tres son los espejos que forman la imagen de 
+una persona: el primero es como se ve uno mismo, el segundo como te
+ven los otros, y el tercero refleja la verdad. Conócete a ti mismo, John. 
+Conoce la verdad. 
+»Divide el cuaderno en secciones independientes según las distintas 
+áreas de tu vida. Por ejemplo, podrías tener secciones para anotar objetivos en materia de puesta a punto, objetivos financieros, objetivos 
+sociales y de relación y, tal vez lo más importante, objetivos espirituales. 
+–¡Caray, suena divertido! Nunca me había pasado por la cabeza hacer 
+algo tan creativo. Debería ponerme a prueba más a menudo –dije.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 81 | posición 971-973 | Añadido el lunes, 5 de febrero de 2024 22:25:41
+
+Estoy de acuerdo. Otra técnica muy efectiva que aprendí en Sivana
+es incluir en el cuaderno imágenes de las cosas que deseas e imágenes 
+de personas que hayan cultivado los talentos y habilidades que tú esperas emular.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 81 | posición 973-977 | Añadido el lunes, 5 de febrero de 2024 22:26:17
+
+Volviendo a tus michelines, si quieres perder peso y estar 
+en buena forma física, pega en tu cuaderno una foto de un corredor de
+maratón o un plusmarquista de lo que sea. Si quieres ser el mejor marido del mundo, podrías recortar una foto de alguien que represente ese
+ideal (quizá tu padre) y ponerla en la sección de relaciones. Si sueñas
+con una mansión junto al mar o con un coche deportivo, busca imágenes inspiradoras y úsalas en tu libro de los sueños. Revisa el cuaderno 
+cada día, aunque sea sólo unos minutos. Conviértelo en tu amigo: te 
+sorprenderán los resultados.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 83 | posición 984-986 | Añadido el lunes, 5 de febrero de 2024 22:27:23
+
+golpe. 
+»Volvamos al método de cinco pasos para conseguir tus metas. Una 
+vez te formas una imagen mental del resultado, creas un poco de presión positiva, fijas un plazo y pasas tu compromiso al papel, el siguiente
+paso es aplicar lo que el yogui Raman llamaba "la regla mágica del 21".
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 83 | posición 986-989 | Añadido el lunes, 5 de febrero de 2024 22:27:51
+
+En su mundo, las personas instruidas creían que, para que un comportamiento nuevo cristalice en hábito, hay que realizar esa nueva actividad durante veintiún días seguidos. 
+–¿Qué tiene de especial esa cifra? 
+–Los sabios dominaban el arte de crear nuevos y más gratificantes 
+hábitos de conducta. El yogui Raman me dijo que el mal hábito, una
+vez adquirido, era imposible de borrar.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 85 | posición 1006-1008 | Añadido el lunes, 5 de febrero de 2024 22:30:01
+
+Cuando introduces una actividad en tu rutina diaria haciéndola de 
+la misma manera y a la misma hora cada día, esa actividad se convierte 
+rápidamente en un hábito.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 85 | posición 1009-1011 | Añadido el lunes, 5 de febrero de 2024 22:30:40
+
+Por lo tanto, dedicarte durante veintiún días al mismo 
+objetivo y realizar esa misma actividad a la misma hora hará que se
+convierta en un hábito. En poco tiempo conseguirás ese nuevo hábito,
+sea la meditación, levantarte más temprano o leer una hora al día, con 
+la misma
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 85 | posición 1009-1011 | Añadido el lunes, 5 de febrero de 2024 22:30:59
+
+Por lo tanto, dedicarte durante veintiún días al mismo 
+objetivo y realizar esa misma actividad a la misma hora hará que se
+convierta en un hábito. En poco tiempo conseguirás ese nuevo hábito,
+sea la meditación, levantarte más temprano o leer una hora al día, con 
+la misma facilidad con que te cepillas los dientes.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 85 | posición 1011-1013 | Añadido el lunes, 5 de febrero de 2024 22:31:20
+
+¿Y el último paso para conseguir tus metas y avanzar por el camino 
+del propósito? 
+–El último paso es aplicable en la medida en que avanzas por el sendero de tu vida. Debes disfrutar del proceso. Los Sabios de Sivana solían hablar de esta filosofía. Creían firmemente en que un día sin risa o 
+un día sin amor era un día sin vida.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 86 | posición 1014-1017 | Añadido el lunes, 5 de febrero de 2024 22:31:45
+
+Sólo digo que debes asegurarte de pasarlo bien mientras avanzas por 
+el camino de tus objetivos. Nunca olvides la importancia de vivir con 
+júbilo desbordante. Nunca descuides la exquisita belleza que hay en todas las cosas vivas. Hoy, y este momento que compartimos, es un regalo. No pierdas el ánimo, la alegría ni la curiosidad. Concéntrate en tu 
+propósito y en servir desinteresadamente al prójimo. El universo se 
+ocupará de todo lo demás. Es una de las leyes más genuinas de la naturaleza.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 87 | posición 1027-1029 | Añadido el lunes, 5 de febrero de 2024 22:33:27
+
+Reclama la alegría de despertar cada mañana lleno de
+energía y júbilo. Insufla el fuego de la pasión a todo aquello que hagas. 
+Pronto cosecharás recompensas,
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 88 | posición 1035-1038 | Añadido el lunes, 5 de febrero de 2024 22:34:35
+
+La virtud: Perseguir el propósito  La enseñanza: • El propósito de la vida es una vida con propósito 
+• Descubrir y luego llevar a cabo la meta de tu vida aporta una satis facción duradera 
+• Marcarse objetivos claramente definidos en lo personal, profesional y espiritual, y luego tener el valor de obrar en consecuencia Las técnicas: El poder del autoexamen 
+El método de cinco pasos para alcanzar objetivos
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 89 | posición 1040-1040 | Añadido el martes, 6 de febrero de 2024 03:33:20
+
+NUEVE El viejo arte del autoliderazgo
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 90 | posición 1046-1050 | Añadido el martes, 6 de febrero de 2024 03:34:49
+
+Notando mi sinceridad, Julián continuó con la fábula simbólica que el yogui Raman le había ofrecido para ilustrar sus métodos para una vida más plena y radiante. –He explicado que el jardín representa ese otro fértil jardín, el de tu mente, que está lleno de tesoros y riquezas ilimitadas. También he hablado del faro y de que representa el poder de los objetivos y la importancia de descubrir la propia vocación. Recordarás que la puerta del faro se abría lentamente y que de él salía un poderoso luchador de sumo japonés.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 90 | posición 1046-1053 | Añadido el martes, 6 de febrero de 2024 03:35:44
+
+Notando mi sinceridad, Julián continuó con la fábula simbólica que el yogui Raman le había ofrecido para ilustrar sus métodos para una vida más plena y radiante. –He explicado que el jardín representa ese otro fértil jardín, el de tu mente, que está lleno de tesoros y riquezas ilimitadas. También he hablado del faro y de que representa el poder de los objetivos y la importancia de descubrir la propia vocación. Recordarás que la puerta del faro se abría lentamente y que de él salía un poderoso luchador de sumo japonés. 
+–Parece una mala película de Godzilla. 
+–A mí me encantaban cuando era un chaval. 
+–Y a mí. Pero no dejes que te distraiga –repliqué. 
+–El luchador de sumo representa un importantísimo elemento en el sistema de los Sabios de Sivana. Hace muchos siglos, en el antiguo Oriente, los grandes maestros desarrollaron y pulieron una filosofía llamada kaizen. Esta palabra japonesa significa mejora constante. Y es la marca de fábrica de todo hombre o mujer que vive una existencia despierta y dinámica.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 90 | posición 1054-1056 | Añadido el martes, 6 de febrero de 2024 03:36:21
+
+Como he mencionado antes, John, el éxito externo empieza por el éxito interno. Si de veras quieres mejorar tu mundo exterior, llámese tu salud, tus relaciones o tus finanzas, debes primero mejorar tu mundo interior. El modo más eficaz de conseguirlo es mediante la práctica de una continua autosuperación. El autodominio es el ADN del dominio de la vida.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 92 | posición 1071-1072 | Añadido el martes, 6 de febrero de 2024 03:38:52
+
+Es como dijo Epicteto hace muchos años: «Ningún hombre es libre si no es dueño de sí mismo.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 91 | posición 1066-1072 | Añadido el martes, 6 de febrero de 2024 03:39:15
+
+Cuando hablo de mejorar tu mundo interior, estoy hablando simplemente de autosuperación y expansión personal, y es lo mejor que puedes hacer por ti mismo. Podrías pensar que estás demasiado ocupado para emplear tiempo en ti mismo, lo cual sería un gran error. Mira, cuando has dedicado tiempo a forjarte un carácter fuerte, imbuido de disciplina, vigor, poder y optimismo, puedes tenerlo todo y hacer todo lo que quieras en tu mundo exterior. Cuando has cultivado un sentido profundo de la fe en tus posibilidades y un espíritu indomable, nada puede impedir que triunfes en lo que te propongas y que vivas con grandes recompensas. Dedicar un tiempo a dominar la propia mente, a ocuparse del cuerpo y nutrir el alma te pondrá en situación de desarrollar más riqueza en tu vida. Es como dijo Epicteto hace muchos años: «Ningún hombre es libre si no es dueño de sí mismo.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 92 | posición 1073-1074 | Añadido el martes, 6 de febrero de 2024 03:39:40
+
+En efecto. Piénsalo bien, John. ¿Cómo puede nadie dirigir una empresa si no puede dirigirse a sí mismo? ¿Cómo puedes alimentar a una familia si no has aprendido a alimentarte a ti mismo? ¿Cómo puedes obrar bien si ni siquiera te sientes bien? ¿Comprendes ahora?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 92 | posición 1072-1073 | Añadido el martes, 6 de febrero de 2024 03:39:47
+
+Entonces el kaizen es un concepto muy práctico.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 92 | posición 1081-1086 | Añadido el martes, 6 de febrero de 2024 03:41:44
+
+Cuando empecé a ver todas las cosas positivas que influirían en mi vida gracias a cultivar buenos hábitos, mi entusiasmo fue en aumento. Pero me di cuenta de que Julián estaba hablando de algo más que de unos ejercicios diarios, de una dieta sana y un estilo de vida equilibrado. Lo que él había aprendido en el Himalaya era más profundo que todo esto. Julián habló de la importancia de forjarse un carácter sólido, de desarrollar una fortaleza mental y de vivir con coraje. Me dijo que estos tres atributos conducían a una vida virtuosa, llena de realización, satisfacción y paz interior. El coraje era una cualidad que todos podíamos cultivar, y a largo plazo daba grandes dividendos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 93 | posición 1086-1090 | Añadido el martes, 6 de febrero de 2024 03:42:25
+
+¿Qué tiene que ver el coraje con el autoliderazgo y el desarrollo personal? –pregunté. 
+–Es el coraje lo que te permite correr tu propia carrera, lo que te permite hacer lo que quieres porque sabes que está bien. El coraje te da el autocontrol para perseverar allí donde otros desfallecen. El grado de coraje con el que vives determina la dosis de satisfacción que recibes. Te permite, además, comprender todas las exquisitas maravillas de esa épica que es tu vida. Y quienes tienen dominio de sí mismos poseen coraje en abundancia.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 94 | posición 1096-1099 | Añadido el martes, 6 de febrero de 2024 03:44:22
+
+¿Por qué últimamente oigo tantas veces eso de «mente, cuerpo y alma»? Se diría que no puedo ni darme la vuelta en el metro sin que alguien lo mencione. 
+–Es la trilogía de tus dones humanos. Mejorar la mente sin cultivar tus cualidades físicas sería una victoria realmente vana. Elevar tu mente y tu cuerpo a los más altos niveles sin nutrir tu alma te dejaría vacío e insatisfecho. Pero cuando dediques tus energías a abrir las puertas de todo el potencial de esas tres cualidades humanas, saborearás el divino éxtasis de una vida iluminada.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 95 | posición 1111-1112 | Añadido el martes, 6 de febrero de 2024 03:46:08
+
+El yogui Raman y, para el caso, todos los Sabios de Sivana, creían que las personas crecen más cuando entran en la zona de lo desconocido.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 95 | posición 1114-1117 | Añadido el martes, 6 de febrero de 2024 03:46:49
+
+El yogui Raman me explicó una verdad fundamental cuando yo era su alumno: «Los únicos límites son aquellos que tú mismo te pones.» Cuando te atreves a salir de tu círculo de comodidad y explorar lo desconocido, empiezas a liberar tu verdadero potencial humano. Es el primer paso hacia el autodominio y el dominio sobre todas las otras circunstancias de tu vida.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 95 | posición 1117-1118 | Añadido el martes, 6 de febrero de 2024 03:47:23
+
+Cuando se fuerzan los límites, como tú has hecho en esta pequeña demostración, estás abriendo reservas físicas y mentales que ni siquiera imaginabas tener.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 95 | posición 1119-1124 | Añadido el martes, 6 de febrero de 2024 03:48:21
+
+–El arte del kaizen –prosiguió Julián– se practica esforzándose cada día. Afánate por mejorar tu cuerpo y tu mente. Nutre tu espíritu. Haz esas cosas que temes. Empieza a vivir con energía desbordante y entusiasmo ilimitado. Ve salir el sol. Baila bajo una ducha de lluvia. Sé la persona que sueñas ser. Haz las cosas que siempre has querido hacer pero no hacías porque creías que eras demasiado joven o demasiado viejo, demasiado rico o demasiado pobre. Prepárate a vivir una vida de verdad, plena e intensa. En Oriente dicen que la suerte favorece a las mentes preparadas. Yo creo que la vida también favorece a la mente preparada.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 96 | posición 1129-1130 | Añadido el martes, 6 de febrero de 2024 03:49:21
+
+El miedo no es más que un monstruo mental que tú mismo creas, una corriente negativa de conciencia.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 96 | posición 1124-1125 | Añadido el martes, 6 de febrero de 2024 03:49:33
+
+Identifica las cosas que te frenan. ¿Te da miedo hablar, tienes problemas de relación
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 96 | posición 1124-1125 | Añadido el martes, 6 de febrero de 2024 03:49:43
+
+Identifica las cosas que te frenan. ¿Te da miedo hablar, tienes problemas de relación
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 96 | posición 1124-1125 | Añadido el martes, 6 de febrero de 2024 03:49:53
+
+Identifica las cosas que te frenan. ¿Te da miedo hablar, tienes problemas de relación?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 96 | posición 1124-1130 | Añadido el martes, 6 de febrero de 2024 03:50:04
+
+Identifica las cosas que te frenan. ¿Te da miedo hablar, tienes problemas de relación? ¿Te falta una actitud positiva o necesitas más energía? Haz un inventario de tus flaquezas. La gente satisfecha es mucho más clarividente que la otra. Tómate tiempo para reflexionar acerca de qué te está impidiendo llevar la vida que realmente te gustaría y podrías llevar. Cuando hayas identificado tus debilidades, el paso siguiente es afrontarlas con decisión y tratar de resolver los miedos. Si temes hablar en público, firma para dar veinte conferencias. Si temes iniciar un nuevo negocio o abandonar una relación poco satisfactoria, haz acopio de todo tu poder de decisión y atrévete. Tal vez sea el primer trago de libertad que hayas probado en años. El miedo no es más que un monstruo mental que tú mismo creas, una corriente negativa
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 96 | posición 1130-1130 | Añadido el martes, 6 de febrero de 2024 03:50:47
+
+de conciencia.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 97 | posición 1136-1139 | Añadido el martes, 6 de febrero de 2024 03:52:16
+
+Fíjate en los niños pequeños. No tienen límites. Su mente es un exuberante panorama de posibilidades. Adecuadamente cultivada, esa mente los llevará a la grandeza. Llena de negatividad, los conducirá a la mediocridad. En otras palabras: ninguna experiencia, sea hablar en público o pedir un aumento de sueldo o nadar en un lago a pleno sol o pasear por una playa a la luz de la luna, es en sí misma dolorosa o placentera. Es tu pensamiento quien la hace una cosa u otra.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 97 | posición 1142-1144 | Añadido el martes, 6 de febrero de 2024 03:53:38
+
+miedo es una respuesta condicionada: un hábito arrasador que puede consumir fácilmente toda tu energía, creatividad y espíritu si no estás atento. Cuando el miedo enseñe su horrible cabeza, córtasela de cuajo. La mejor manera es hacer precisamente esa cosa que temes. Has de entender el funcionamiento del miedo. Es algo que tú creas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 97 | posición 1144-1146 | Añadido el martes, 6 de febrero de 2024 03:53:59
+
+Como cualquier otra creación, es tan sencillo echarla abajo como levantarla. Busca metódicamente y luego destruye todos los miedos que se han colado en la fortaleza de tu mente. Bastará con eso para que tengas más confianza, felicidad y tranquilidad de ánimo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 98 | posición 1154-1155 | Añadido el martes, 6 de febrero de 2024 03:56:14
+
+lo que separa a las personas realizadas de aquellas que viven sin inspiración alguna es que los primeros hacen cosas que la gente menos perfeccionada no gusta de hacer.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 98 | posición 1155-1158 | Añadido el martes, 6 de febrero de 2024 03:57:12
+
+»La gente realmente esclarecida, la que experimenta la felicidad a diario, está dispuesta a renunciar a un placer a corto plazo a cambio de una satisfacción a largo plazo. De modo que encara sus miedos y debilidades con valor, aunque zambullirse en la zona de lo desconocido le suponga ciertas incomodidades. Esa gente vive según la filosofía del kaizen: mejorar cada aspecto de sí mismos constantemente. Con
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 99 | posición 1167-1169 | Añadido el martes, 6 de febrero de 2024 03:59:09
+
+Es lo que he dicho antes: la felicidad se consigue gracias a la progresiva realización de un propósito digno. Si tú haces lo que realmente amas hacer, estás destinado a sentir la máxima satisfacción.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 99 | posición 1170-1172 | Añadido el martes, 6 de febrero de 2024 03:59:44
+
+Buena pregunta, John. Hacer lo que uno ama, ya sea dejar el empleo que tienes ahora y convertirte en actor, o invertir menos tiempo en las cosas menos importantes para emplearlo en las que tienen más significado, requiere mucho coraje. Requiere que salgas de tu zona de confort. Y el cambio, al principio, siempre es un poco incómodo. Y arriesgado. Pero es la manera más segura de tener una vida más gozosa.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 100 | posición 1174-1175 | Añadido el martes, 6 de febrero de 2024 04:00:07
+
+Pero debes dedicar un tiempo cada día a trabajar en ti mismo, aunque sean sólo diez o quince minutos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 100 | posición 1175-1177 | Añadido el martes, 6 de febrero de 2024 04:00:29
+
+¿Y qué simboliza el voluminoso luchador de sumo en la fábula del yogui Raman? 
+–Nuestro forzudo amigo te servirá para recordar el poder del kaizen, palabra japonesa que designa el desarrollo de sí mismo y el progreso constantes.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 100 | posición 1177-1180 | Añadido el martes, 6 de febrero de 2024 04:01:15
+
+En unas pocas horas, Julián había revelado la más poderosa –y más sorprendente– información que jamás había oído. Yo había aprendido que mi mente guarda un tesoro en potencia. Había aprendido técnicas sumamente prácticas para serenar la mente y concentrar su poder en mis sueños y deseos. Había aprendido la importancia de tener un objetivo claro en la vida y de fijarme metas definidas en cada aspecto de mi mundo personal, profesional y espiritual. Y ahora había conocido el principio del autodominio: el kaizen.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 101 | posición 1186-1188 | Añadido el martes, 6 de febrero de 2024 04:02:26
+
+¿Cambiar de vida en sólo treinta días? –pregunté, incrédulo. 
+–Sí. El quid pro quo es que dediques al menos una hora diaria durante treinta días consecutivos a practicar las estrategias que voy a enseñarte. Esta inversión en ti mismo es lo único que se precisa. Y, por favor, no me digas que no tienes tiempo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 102 | posición 1201-1202 | Añadido el martes, 6 de febrero de 2024 04:04:09
+
+Emplear una hora diaria ocupándote de ti mismo produce resultados extraordinarios en treinta días, pero siempre que hagas las cosas bien.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 103 | posición 1208-1209 | Añadido el martes, 6 de febrero de 2024 04:05:18
+
+«los diez rituales de la Vida Radiante».
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 103 | posición 1210-1213 | Añadido el martes, 6 de febrero de 2024 04:06:02
+
+La primera estrategia era conocida por los sabios como el Ritual de la Soledad. Se trata de asegurar que tu programa diario incluya un período obligado de paz. 
+–¿Y eso qué es? 
+–Un período de tiempo, mínimo quince minutos y máximo cincuenta, en que tú exploras el poder curativo del silencio y tratas de saber quién eres –explicó. 
+–¿Una especie de descanso para la recalentada máquina de mi mente? –sugerí con una sonrisa.
+–Es una manera bastante exacta de verlo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 106 | posición 1240-1240 | Añadido el martes, 6 de febrero de 2024 23:16:13
+
+ritual, que se llama Ritual
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 106 | posición 1240-1241 | Añadido el martes, 6 de febrero de 2024 23:16:23
+
+Ritual de Fisicalidad.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 106 | posición 1241-1243 | Añadido el martes, 6 de febrero de 2024 23:16:45
+
+sobre el poder del cuidado físico. Se basa en el principio de que si
+cuidas tu cuerpo cuidas tu mente. Al preparar tu cuerpo también preparas tu mente. Dedica cada día un poco de tiempo a nutrir el templo de 
+tu cuerpo con vigorosos ejercicios. Haz que tu circulación sanguínea se 
+ponga en movimiento.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 106 | posición 1240-1243 | Añadido el martes, 6 de febrero de 2024 23:17:06
+
+Ritual de Fisicalidad. 
+–¿De qué se trata? 
+–Es sobre el poder del cuidado físico. Se basa en el principio de que si
+cuidas tu cuerpo cuidas tu mente. Al preparar tu cuerpo también preparas tu mente. Dedica cada día un poco de tiempo a nutrir el templo de 
+tu cuerpo con vigorosos ejercicios. Haz que tu circulación sanguínea se 
+ponga en movimiento.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 106 | posición 1243-1245 | Añadido el martes, 6 de febrero de 2024 23:17:45
+
+¿Sabías que una semana tiene 168 horas? 
+–Pues no, la verdad. 
+–Al menos cinco de todas esas horas deberían invertirse en alguna
+forma de actividad física. Los Sabios de Sivana practicaban la antiquísima disciplina del yoga para despertar su potencial físico y vivir una existencia dinámica.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 107 | posición 1252-1257 | Añadido el martes, 6 de febrero de 2024 23:19:21
+
+por un frondoso bosque, hace maravillas contra la fatiga y para devolver el cuerpo a su estado natural de dinamismo. Cuando el tiempo era
+demasiado malo para andar, se ejercitaban dentro de sus chozas. Podían saltarse una comida, pero nunca su turno diario de ejercicios físicos. 
+–¿Qué tenían en sus chozas? ¿Aparatos de culturismo? –bromeé. 
+–Nada de eso. A veces practicaban posturas de yoga. Otras veces los 
+veía hacer flexiones apoyando una sola mano. Creo que no importaba
+mucho el tipo de ejercicio, siempre y cuando movieran el cuerpo y respiraran el aire límpido del precioso entorno en que vivían.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 107 | posición 1251-1252 | Añadido el martes, 6 de febrero de 2024 23:19:27
+
+cuerpos? 
+–El yogui Raman y sus hermanos creían también que andar vigorosamente por entornos naturales, ya sea por senderos de alta montaña
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 108 | posición 1258-1260 | Añadido el martes, 6 de febrero de 2024 23:20:05
+
+poco de estar yo en Sivana, los sabios me enseñaron que la manera más rápida de doblar o incluso triplicar la cantidad de energía era 
+aprender el arte de la buena respiración.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 108 | posición 1263-1266 | Añadido el martes, 6 de febrero de 2024 23:21:03
+
+Su filosofía era sencilla: incorpora más oxígeno respirando adecuadamente y liberarás tus reservas de energía junto con tu estado natural de vitalidad. 
+–Bueno, ¿y por dónde empiezo?
+–De hecho es bastante fácil. Dos o tres veces al día dedica un par de 
+minutos a pensar en cómo respirar de un modo más eficaz. 
+–¿Cómo sé si respiro con eficacia? 
+–Para empezar, tu vientre debería moverse un poco. Esto indica que
+respiras por el abdomen, lo cual es correcto.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 108 | posición 1266-1268 | Añadido el martes, 6 de febrero de 2024 23:21:19
+
+Un truco que me enseñó el 
+yogui Raman es juntar las manos sobre el estómago. Si se movían 
+cuando yo inspiraba, mi técnica era correcta. 
+–Muy interesante.
+–Si te gusta, entonces te gustará el tercer ritual de la Vida Radiante –
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 109 | posición 1268-1270 | Añadido el martes, 6 de febrero de 2024 23:21:45
+
+El Ritual de la Nutrición. En mis tiempos de abogado, yo
+vivía de una dieta a base de filetes, patatas fritas y demás comida basura. Sí, comía en los mejores restaurantes del país, pero igualmente
+ingería basura. Yo entonces lo ignoraba, pero ésa era una de las principales causas de mi insatisfacción.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 109 | posición 1272-1272 | Añadido el martes, 6 de febrero de 2024 23:22:03
+
+«Como 
+nutres tu cuerpo, así nutres tu mente.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 109 | posición 1274-1275 | Añadido el martes, 6 de febrero de 2024 23:22:19
+
+En Sivana aprendí que
+gran parte de mi entumecimiento era debido al mal combustible con 
+que hacía funcionar mi cuerpo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 109 | posición 1275-1275 | Añadido el martes, 6 de febrero de 2024 23:22:57
+
+¿Qué comían los Sabios de Sivana para ser tan longevos e inteligentes?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 109 | posición 1275-1279 | Añadido el martes, 6 de febrero de 2024 23:23:03
+
+¿Qué comían los Sabios de Sivana para ser tan longevos e inteligentes? 
+–Alimentos vivos. 
+–¿Cómo? 
+–No hay otra respuesta. Los alimentos vivos son los que no están 
+muertos. 
+–Venga, Julián. ¿Qué es eso de alimentos vivos? 
+–Básicamente son aquellos que provienen de la interacción natural del
+sol, el aire, la tierra y el agua. Estoy hablando de una dieta vegetariana, claro. Llena el plato de hortalizas, frutas y cereales y vivirás eternamente. 
+–¿Es posible eso? 
+–Muchos de los sabios habían superado la barrera de los cien y no 
+mostraban signos de decaimiento.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 110 | posición 1284-1285 | Añadido el martes, 6 de febrero de 2024 23:24:21
+
+Ellos lo llaman sattvic, o dieta pura. Y en cuanto al tema de la fortaleza, 
+piensa que los animales más fuertes del planeta, llámense gorilas o elefantes, llevan la insignia del vegetariano.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 111 | posición 1286-1288 | Añadido el martes, 6 de febrero de 2024 23:24:38
+
+Mira, John, los sabios no eran gente extravagante. Toda su sabiduría 
+se basaba en el antiquísimo principio de que «hay que vivir con moderación, huir siempre de los extremos». Si te gusta la carne, no hay problema en que sigas comiéndola. Pero recuerda que estás ingiriendo un 
+alimento muerto. Si puedes, reduce al máximo
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 111 | posición 1288-1292 | Añadido el martes, 6 de febrero de 2024 23:25:10
+
+la cantidad de carne roja. Cuesta mucho de digerir, y como el sistema digestivo es uno de los
+procesos que más energía consumen, valiosas reservas de energía son 
+derrochadas innecesariamente por esa causa. ¿Ves adonde quiero ir a 
+parar? Compara cómo te sientes después de comer un filete con la
+energía que tienes después de comer una ensalada. Si no quieres ser 
+vegetariano estricto, al menos empieza a comer ensalada en cada comida, y fruta como postre. Incluso esto bastará para que tu vida física 
+experimente un gran cambio.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 112 | posición 1298-1299 | Añadido el martes, 6 de febrero de 2024 23:25:57
+
+Si te ha cautivado el Ritual de la Nutrición, creo que te encantará el 
+cuarto. Se conoce como Ritual del Saber Abundante.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 112 | posición 1299-1302 | Añadido el martes, 6 de febrero de 2024 23:26:29
+
+Se centra en la 
+idea del aprendizaje y la expansión de tus conocimientos por el bien de 
+ti mismo y de cuantos te rodean. 
+–¿La vieja máxima de «saber es poder»? 
+–Algo más que eso, John. El saber es sólo poder en potencia. Para que
+ese poder se manifieste, debe ser aplicado. La mayoría de la gente sabe
+lo que debe hacer en cada situación, o en su vida. El problema es que 
+no toma medidas coherentes y diarias para aplicar el saber y hacer realidad sus sueños.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 112 | posición 1302-1304 | Añadido el martes, 6 de febrero de 2024 23:26:48
+
+El Ritual del Saber Abundante consiste en convertirse 
+en un alumno de la vida. Y, aún más importante, requiere que utilices 
+lo que has aprendido en el aula de tu existencia.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 113 | posición 1305-1306 | Añadido el martes, 6 de febrero de 2024 23:27:10
+
+Una de las técnicas más importantes es también 
+una de las más fáciles. Podrías empezar a practicarla hoy mismo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 113 | posición 1314-1316 | Añadido el martes, 6 de febrero de 2024 23:28:07
+
+Lee regularmente. Leer media hora diaria puede hacer maravillas. Pero debo prevenirte: no leas cualquier cosa. Has de ser muy selectivo 
+con lo que metes en el exuberante jardín de tu mente. Ha de ser algo
+inmensamente nutritivo; algo que sirva para perfeccionarte a ti mismo 
+y a la calidad de tu vida.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 114 | posición 1321-1322 | Añadido el martes, 6 de febrero de 2024 23:28:53
+
+Sólo quiero decirte que para sacar todo el jugo a un 
+gran libro debes estudiarlo, no sólo leerlo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 114 | posición 1322-1324 | Añadido el martes, 6 de febrero de 2024 23:29:22
+
+Repásalo de arriba abajo 
+como haces cuando lees los contratos de tus grandes clientes. Trabaja
+con él, sé uno con el libro. Los sabios leían muchos de los libros de su 
+biblioteca hasta diez y quince veces. Los trataban como si fueran
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 114 | posición 1322-1324 | Añadido el martes, 6 de febrero de 2024 23:29:30
+
+Repásalo de arriba abajo 
+como haces cuando lees los contratos de tus grandes clientes. Trabaja
+con él, sé uno con el libro. Los sabios leían muchos de los libros de su 
+biblioteca hasta diez y quince veces. Los trataban como si fueran documentos sagrados de origen divino.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 115 | posición 1324-1325 | Añadido el martes, 6 de febrero de 2024 23:29:39
+
+Caray. ¿Tan importante es leer? 
+–Media hora diaria hará que rápidamente veas las enormes reservas
+de conocimiento que tienes a tu disposición
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 115 | posición 1324-1325 | Añadido el martes, 6 de febrero de 2024 23:29:47
+
+Caray. ¿Tan importante es leer? 
+–Media hora diaria hará que rápidamente veas las enormes reservas
+de conocimiento que tienes a tu disposición
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 115 | posición 1325-1327 | Añadido el martes, 6 de febrero de 2024 23:30:05
+
+Si quieres ser mejor abogado, padre o amante, existen libros que te propulsan como un cohete
+en esa dirección. Todos los errores que puedas cometer en la vida han 
+sido cometidos ya por quienes te precedieron. ¿Crees de veras que los 
+desafíos a que te enfrentas son únicos?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 115 | posición 1329-1330 | Añadido el martes, 6 de febrero de 2024 23:30:58
+
+Busca los libros adecuados. 
+Aprende cómo han hecho otros para manejar esos problemas que ahora
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 115 | posición 1330-1331 | Añadido el martes, 6 de febrero de 2024 23:31:06
+
+se te plantean a ti. Aplica sus estrategias y las mejoras que vas a notar 
+en tu vida te sorprenderán.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 123 | posición 1409-1410 | Añadido el viernes, 9 de febrero de 2024 12:06:54
+
+En eso consiste precisamente el Ritual de la Reflexión Personal. Averigua lo que está bien y lo que está mal en tu vida. Y luego trata de 
+hacer mejoras.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 124 | posición 1410-1411 | Añadido el viernes, 9 de febrero de 2024 12:08:11
+
+dije. 
+–El sexto ritual se llama Ritual del Despertar Anticipado.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 124 | posición 1412-1414 | Añadido el viernes, 9 de febrero de 2024 12:10:16
+
+Por término medio, una persona puede 
+pasar con seis horas de sueño y estar perfectamente sana. En realidad, 
+dormir no es más que un hábito y, como cualquier otro hábito, tú puedes entrenarte para conseguir el resultado que buscas: en este caso, 
+dormir menos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 125 | posición 1420-1421 | Añadido el viernes, 9 de febrero de 2024 12:14:57
+
+haz lo que creas correcto. Y recuerda la advertencia del yogui Raman: «Huir de los extremos, moderación ante todo.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 124 | posición 1418-1421 | Añadido el viernes, 9 de febrero de 2024 12:15:12
+
+Está bien, me gusta la idea de procurar despertarme antes. Pero 
+¿qué significa ese «antes»? 
+–Otra buena pregunta. No existe un momento ideal. Como todo lo que 
+te he dicho hasta ahora, haz lo que creas correcto. Y recuerda la advertencia del yogui Raman: «Huir de los extremos, moderación ante todo.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 125 | posición 1427-1430 | Añadido el viernes, 9 de febrero de 2024 12:16:26
+
+¿Y cómo introduzco este hábito en mi rutina diaria? 
+–Te daré un par de consejos. En primer lugar, no olvides que lo que 
+cuenta es la calidad del sueño, no la cantidad. Es mejor dormir seis 
+horas seguidas profundamente, que diez horas dando vueltas en la cama. Se trata de proporcionar a tu cuerpo el descanso necesario
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 126 | posición 1430-1431 | Añadido el viernes, 9 de febrero de 2024 12:16:44
+
+para
+que sus procesos naturales puedan restaurar tu dimensión física a su 
+estado natural de salud, un estado que sufre las consecuencias del estrés diario.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 127 | posición 1439-1441 | Añadido el viernes, 9 de febrero de 2024 12:18:36
+
+Determinando los pensamientos que entran en tu mente estás determinando lo que saldrá. Antes de ir a acostarte, no mires las noticias
+ni discutas con nadie ni repases mentalmente los acontecimientos del
+día. Relájate. Toma una infusión, si quieres. Escucha algo de música
+clásica suave y disponte a dejarte llevar
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 127 | posición 1439-1441 | Añadido el viernes, 9 de febrero de 2024 12:18:37
+
+Determinando los pensamientos que entran en tu mente estás determinando lo que saldrá. Antes de ir a acostarte, no mires las noticias
+ni discutas con nadie ni repases mentalmente los acontecimientos del
+día. Relájate. Toma una infusión, si quieres. Escucha algo de música
+clásica suave y disponte a dejarte llevar
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 127 | posición 1442-1443 | Añadido el viernes, 9 de febrero de 2024 12:19:05
+
+no olvides la Regla del Veintiuno: si haces algo durante
+veintiún días seguidos, se convertirá en un hábito.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 127 | posición 1445-1445 | Añadido el sábado, 10 de febrero de 2024 21:03:34
+
+De acuerdo, pongamos que me levanto cada día a las cinco y media.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 127 | posición 1445-1446 | Añadido el sábado, 10 de febrero de 2024 21:03:43
+
+¿Qué hago entonces?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 128 | posición 1446-1448 | Añadido el sábado, 10 de febrero de 2024 21:03:54
+
+Una vez en pie, hay muchas cosas que puedes hacer. El principio fundamental que debes tener presente es la importancia de empezar el día 
+bien. Como te sugería, lo que piensas y lo que haces en los diez primeros minutos del día tiene un pronunciado efecto en el resto de la jornada.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 128 | posición 1448-1451 | Añadido el sábado, 10 de febrero de 2024 21:04:21
+
+Piensa cosas positivas. Ofrece una oración de gracias 
+por todo lo que tienes. Trabaja tu lista de gratitudes. Escucha buena
+música. Ve salir el sol o, si te apetece, ve a dar un corto paseo en un 
+entorno natural. Los sabios se echaban a reír sólo para sentir cómo fluían cada mañana los «jugos de la felicidad».
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 129 | posición 1465-1465 | Añadido el sábado, 10 de febrero de 2024 21:06:30
+
+esto me lleva al séptimo de los rituales de la Vida Radiante: el Ritual de la Música.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 130 | posición 1472-1473 | Añadido el sábado, 10 de febrero de 2024 21:07:43
+
+El octavo ritual es el de la Palabra Hablada. Los sabios tenían una serie de mantras que recitaban mañana, tarde y noche. Me
+decían que esta práctica era muy efectiva para mantenerse concentrado, fuerte y feliz.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 130 | posición 1475-1475 | Añadido el sábado, 10 de febrero de 2024 21:08:15
+
+mantra es 
+una frase pensada para liberar la mente.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 131 | posición 1478-1480 | Añadido el sábado, 10 de febrero de 2024 21:31:10
+
+Pero he comprobado que repetir un mantra en voz alta tiene un 
+efecto maravilloso sobre mi espíritu. Cuando necesito sentirme motivado, puedo repetir una frase dos o trescientas veces. Por ejemplo, para
+mantener la sensación de auto-confianza que he venido cultivando, repito: «Soy fuerte, capaz y tranquilo.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 131 | posición 1484-1486 | Añadido el sábado, 10 de febrero de 2024 21:32:06
+
+dices que estás viejo y cansado,
+este mantra se manifestará en tu realidad exterior. Si dices que eres 
+débil y careces de entusiasmo, así será tu mundo. Pero si dices que 
+eres sano, dinámico y pleno de vida, tu vida cambiará radicalmente. 
+Las palabras que te dices a ti mismo afectan a tu autoimagen y ésta determina qué medidas tomas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 131 | posición 1484-1486 | Añadido el sábado, 10 de febrero de 2024 21:32:14
+
+dices que estás viejo y cansado,
+este mantra se manifestará en tu realidad exterior. Si dices que eres 
+débil y careces de entusiasmo, así será tu mundo. Pero si dices que 
+eres sano, dinámico y pleno de vida, tu vida cambiará radicalmente. 
+Las palabras que te dices a ti mismo afectan a tu autoimagen y ésta determina qué medidas tomas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 131 | posición 1483-1486 | Añadido el sábado, 10 de febrero de 2024 21:32:29
+
+día. Si dices que estás viejo y cansado,
+este mantra se manifestará en tu realidad exterior. Si dices que eres 
+débil y careces de entusiasmo, así será tu mundo. Pero si dices que 
+eres sano, dinámico y pleno de vida, tu vida cambiará radicalmente. 
+Las palabras que te dices a ti mismo afectan a tu autoimagen y ésta determina qué medidas tomas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 132 | posición 1488-1493 | Añadido el sábado, 10 de febrero de 2024 21:33:35
+
+La autoimagen es una especie de profecía que se cumple por sí sola. 
+–Explícate. 
+–Si crees que eres incapaz de hacer algo, pongamos encontrar ese socio perfecto o vivir sin estrés, tus creencias afectarán tu autoimagen. 
+Del mismo modo, tu autoimagen te impedirá dar los pasos necesarios
+para encontrar al socio perfecto o procurarte una vida de serenidad. De
+hecho, saboteará cualquier esfuerzo que puedas hacer en ese sentido. 
+–¿Por qué funciona así? 
+–Muy sencillo. Tu autoimagen es una especie de gobernador, jamás te
+dejará actuar de un modo que no concuerde con ella. Lo bonito es que 
+tú puedes cambiar tu autoimagen como puedes cambiar todo lo demás.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 132 | posición 1493-1494 | Añadido el sábado, 10 de febrero de 2024 21:58:53
+
+Y cuando cambio mi mundo interior, cambio también mi mundo exterior –
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 133 | posición 1495-1496 | Añadido el sábado, 10 de febrero de 2024 21:59:03
+
+Eso nos lleva al noveno ritual de la Vida Radiante. Se llama el Ritual del Carácter
+Congruente.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 133 | posición 1496-1500 | Añadido el sábado, 10 de febrero de 2024 21:59:35
+
+En pocas palabras, este ritual exige que tomes medidas adicionales para fraguar tu carácter. Fortalecer tu personalidad afecta a tu forma de verte y a tus actos. Esos actos, unidos, 
+forman tus hábitos, y tus hábitos son los que te conducen a tu destino.
+El yogui Raman lo expresó mejor cuando dijo: «Siembras un pensamiento, cosechas una acción. Cosechas una acción, siembras un hábito.
+Siembras un hábito, cosechas un carácter. Siembras un carácter, cosechas un
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 133 | posición 1496-1500 | Añadido el sábado, 10 de febrero de 2024 21:59:46
+
+En pocas palabras, este ritual exige que tomes medidas adicionales para fraguar tu carácter. Fortalecer tu personalidad afecta a tu forma de verte y a tus actos. Esos actos, unidos, 
+forman tus hábitos, y tus hábitos son los que te conducen a tu destino.
+El yogui Raman lo expresó mejor cuando dijo: «Siembras un pensamiento, cosechas una acción. Cosechas una acción, siembras un hábito.
+Siembras un hábito, cosechas un carácter. Siembras un carácter, cosechas un destino.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 133 | posición 1500-1505 | Añadido el sábado, 10 de febrero de 2024 22:00:43
+
+¿Qué cosas debería hacer para fraguar mi carácter? 
+–Todo lo que cultive tus virtudes. Antes de que me preguntes qué 
+quiero decir con «virtudes», deja que te aclare el concepto. Los sabios 
+del Himalaya estaban convencidos de que una vida virtuosa era una vida con sentido. En consecuencia, regían todos sus actos por una serie 
+de principios imperecederos. 
+–Creí que habías dicho que se regían por un propósito –objeté. 
+–Sí, y así es, pero la vocación de su vida incluía una manera de vivir 
+congruente con estos principios, los mismos que sus antepasados habían atesorado a lo largo de miles de años. 
+–¿Cuáles son esos principios, Julián? 
+–Laboriosidad, compasión, humildad, paciencia, honestidad y coraje.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 134 | posición 1505-1509 | Añadido el sábado, 10 de febrero de 2024 22:01:17
+
+Cuando todos tus actos sean congruentes con estos principios, sentirás 
+una profunda sensación de armonía y paz interiores. Vivir así conducirá
+inevitablemente a tu éxito espiritual. ¿Por qué? Porque estarás haciendo 
+lo correcto. Tus actos estarán en concordancia con las leyes de la naturaleza y del universo. Es entonces cuando empiezas a beneficiarte de la 
+energía de esa otra dimensión, llámalo poder superior, si quieres. También es entonces cuando tu vida se adentra en el reino de lo extraordinario y empiezas a experimentar lo sagrado de tu existencia. Es el primer paso para un esclarecimiento duradero
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 134 | posición 1512-1514 | Añadido el sábado, 10 de febrero de 2024 22:02:04
+
+Por ahora, recuerda que debes 
+hacer pequeñas cosas cada día para fraguar tu carácter. Como dijo
+Emerson: «El carácter es siempre superior al intelecto.» Tu carácter se fragua cuando obras de un modo acorde con los principios que he mencionado antes. Si no lo haces así, la verdadera felicidad se te escapará 
+de las manos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 134 | posición 1514-1515 | Añadido el sábado, 10 de febrero de 2024 22:02:15
+
+¿Y el último ritual? 
+–Es el importantísimo Ritual de la Simplicidad, el que exige que vivas
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 134 | posición 1514-1515 | Añadido el sábado, 10 de febrero de 2024 22:02:31
+
+¿Y el último ritual? 
+–Es el importantísimo Ritual de la Simplicidad, el que exige que vivas 
+una vida sencilla.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 135 | posición 1515-1517 | Añadido el sábado, 10 de febrero de 2024 22:02:45
+
+Como decía el yogui Raman, «no hay que vivir en el 
+meollo de las cosas nimias. Concéntrate en tus prioridades, en esas actividades que tienen verdadero sentido. Tu vida será gratificante y excepcionalmente apacible. Te doy mi palabra».
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 135 | posición 1519-1521 | Añadido el sábado, 10 de febrero de 2024 22:03:23
+
+¿Qué hiciste para cultivar la simplicidad? 
+–Dejé de usar ropa cara, abandoné mi adicción a leer seis periódicos al 
+día, olvidé la necesidad de estar siempre disponible para todo el mundo, me volví vegetariano y comí menos. En resumidas cuentas, reduje 
+mis necesidades.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 135 | posición 1523-1530 | Añadido el sábado, 10 de febrero de 2024 22:04:18
+
+Pero antes has dicho que la felicidad se consigue con la realización. Y 
+ahora me dices que reduzca mis necesidades y me contente con menos.
+¿No es paradójico? 
+–Muy bien expuesto, John. Puede parecer una contradicción, pero no 
+lo es. La felicidad duradera viene, es cierto, de esforzarse en realizar 
+tus sueños. Tu mejor momento es cuando te mueves hacia adelante. La 
+clave está en no hipotecar tu felicidad en la búsqueda de ese elusivo Eldorado. Por ejemplo, aunque yo era multimillonario, me decía que el 
+éxito para mí era tener trescientos millones de dólares en mi cuenta 
+bancaria: una receta para el desastre. 
+–¿Trescientos millones? –pregunté boquiabierto.
+–Ni más ni menos. Por consiguiente, por más dinero que tuviera, nunca estaba satisfecho. Nunca era feliz. En el fondo no era más que codicia. No tengo problema en admitirlo ahora. Era un poco como la historia 
+del rey Midas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 136 | posición 1530-1531 | Añadido el sábado, 10 de febrero de 2024 22:04:53
+
+El hombre que amaba tanto el oro que llegó a rezar para que todo lo
+que él tocase se convirtiera en ese metal. Su deseo le fue concedido. 
+Pero entonces el rey se dio cuenta de que no podía comer porque la comida se había vuelto de oro, y así sucesivamente.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 137 | posición 1539-1541 | Añadido el sábado, 10 de febrero de 2024 22:05:56
+
+Deja de levantar el teléfono cada vez que suena, deja de malgastar el tiempo leyendo propaganda de buzón, deja de comer fuera tres veces por semana, renuncia a tu club de golf y pasa más tiempo con tus chicos, prescinde del reloj un día a la semana, ve salir el sol de vez en cuando, vende tu teléfono móvil y tira el busca a la basura. ¿Continúo?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 137 | posición 1547-1550 | Añadido el sábado, 10 de febrero de 2024 22:06:52
+
+Digo que serán menos de treinta días porque el verdadero cambio es espontáneo. 
+–¿Espontáneo? 
+–Sí, es algo que pasa en un abrir y cerrar de ojos, desde el momento en que decides en el fondo de tu alma que vas a elevar tu vida al más alto nivel. A partir de ahí serás otra persona, estarás en la senda de tu destino.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 142 | posición 1602-1610 | Añadido el sábado, 10 de febrero de 2024 22:14:26
+
+Resumen de acción del capítulo 9 La sabiduría de Julián en pocas palabras 
+El símbolo:
+La virtud:
+Practicar el kaizen 
+La enseñanza:  El autodominio es el ADN del dominio de la vida
+El éxito empieza por dentro 
+El esclarecimiento se logra mediante el cultivo constante de la mente, el cuerpo y el alma Las técnicas:
+Hacer las cosas que nos dan miedo Los diez rituales de la Vida Radiante 
+Cita valiosa:  E! universo favorece a los valientes. Cuando decidas elevar tu alma a su mas alto nivel, la fuerza de tu alma te guiará a un lugar mágico repleto de valiosos tesoros. DIEZ 
+El poder de la disciplina  Estoy convencido de que en este día somos dueños de nuestro destino, que la tarea que se nos ha impuesto no es superior a nuestras fuerzas, que sus acometidas no están por encima de lo que puedo soportar. Mientras tengamos fe en nuestra causa y una indeclinable voluntad de vencer, la victoria estará a nuestro alcance. WINSTON CHURCHILL  Julián
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 142 | posición 1602-1610 | Añadido el sábado, 10 de febrero de 2024 22:15:45
+
+Resumen de acción del capítulo 9 La sabiduría de Julián en pocas palabras 
+El símbolo:
+La virtud:
+Practicar el kaizen 
+La enseñanza:  El autodominio es el ADN del dominio de la vida
+El éxito empieza por dentro 
+El esclarecimiento se logra mediante el cultivo constante de la mente, el cuerpo y el alma Las técnicas:
+Hacer las cosas que nos dan miedo Los diez rituales de la Vida Radiante 
+Cita valiosa:  E! universo favorece a los valientes. Cuando decidas elevar tu alma a su mas alto nivel, la fuerza de tu alma te guiará a un lugar mágico repleto de valiosos tesoros. DIEZ 
+El poder de la disciplina  Estoy convencido de que en este día somos dueños de nuestro destino, que la tarea que se nos ha impuesto no es superior a nuestras fuerzas, que sus acometidas no están por encima de lo que puedo soportar. Mientras tengamos fe en nuestra causa y una indeclinable voluntad de vencer, la victoria estará a nuestro alcance. WINSTON CHURCHILL
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 143 | posición 1610-1613 | Añadido el sábado, 10 de febrero de 2024 22:16:18
+
+Julián siguió utilizando la fábula mística del yogui Raman como piedra angular de las enseñanzas que estaba compartiendo conmigo. Yo sabía que el jardín de mi mente era una mina de poder y potencialidad. Por el símbolo del faro, había aprendido la gran importancia de tener un propósito claro en la vida y la efectividad de marcarse objetivos. Mediante el ejemplo del luchador de sumo japonés, me había introducido en el concepto del kaizen y en los beneficios que se derivarían del autodominio. Pero ignoraba que lo mejor estaba por venir.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 144 | posición 1617-1622 | Añadido el sábado, 10 de febrero de 2024 22:17:30
+
+¿Alguna vez te has parado a examinar un cable, John? 
+–No es que sea una de mis prioridades, la verdad –admití con una sonrisa.
+–Hazlo cuando tengas ocasión. Verás que consiste en muchos y diminutos alambres puestos uno encima de otro. Cada alambre por sí solo es fino y frágil. Pero todos juntos suman mucho más que sus partes, de forma que el cable es más fuerte que el hierro. Algo similar ocurre con el autocontrol y la fuerza de voluntad. Para tener una voluntad de hierro es esencial ofrecer pequeños tributos a la virtud de la disciplina personal. Convertidos en algo rutinario, estos actos van aglutinándose hasta producir finalmente una gran fuerza interior.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 144 | posición 1623-1625 | Añadido el sábado, 10 de febrero de 2024 22:17:56
+
+Si liberas tu fuerza de voluntad te conviertes en dueño de tu mundo personal. Cuando practiques continuamente el viejo arte del autodominio, no habrá obstáculo ni crisis que no puedas superar. La autodisciplina te proporcionará las reservas mentales requeridas para perseverar cuando la vida te ponga a prueba.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 144 | posición 1625-1631 | Añadido el sábado, 10 de febrero de 2024 22:18:42
+
+»Déjame prevenirte de una cosa: la falta de fuerza de voluntad es una enfermedad mental –añadió Julián–. Si padeces esta debilidad, procura ponerle solución cuanto antes. La abundancia de fuerza de voluntad y de disciplina es uno de los principales atributos de todos aquellos con carácter fuerte y una vida maravillosa. La fuerza de voluntad te permite hacer lo que dijiste que harías: levantarte a las cinco de la mañana para cultivar tu mente mediante la meditación. O alimentar tu espíritu con un paseo por el bosque cuando la cama te reclama en un frío día de invierno. Es la fuerza de voluntad lo que te permite contener la lengua cuando alguien te insulta o hace algo con lo que no estás de acuerdo, lo que impulsa tus sueños cuando las alternativas parecen estar en contra, lo que te da la fuerza interior para ser fiel a tus compromisos para con los demás y, sobre todo, para contigo mismo.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 145 | posición 1638-1641 | Añadido el sábado, 10 de febrero de 2024 22:19:46
+
+Mediante el acero de la disciplina, forjarás un carácter colmado de coraje y de paz. Mediante la virtud de la voluntad, estás destinado a alcanzar el más alto ideal de la vida y a vivir en una mansión celestial llena de cosas buenas, de vitalidad y alegría. Sin ello, estás perdido como un marino sin brújula, ese marino que al final se hunde con su barco.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 146 | posición 1651-1654 | Añadido el sábado, 10 de febrero de 2024 22:21:37
+
+»Cuando tengas autodominio, dispondrás de fortaleza para hacer lo que siempre has querido hacer, tanto si es entrenarte para la maratón como si es dominar el arte del rajting o dejar la abogacía y dedicarte a la pintura. No te voy a juzgar, tus sueños son sólo tuyos. Sólo te digo que todas estas cosas estarán a tu alcance cuando cultives las reservas dormidas de tu fuerza de voluntad
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 147 | posición 1654-1656 | Añadido el sábado, 10 de febrero de 2024 22:22:20
+
+»Dotar a tu vida de autodominio y disciplina –añadió– te dará también una intensa sensación de libertad. Esto solo ya cambiará las cosas. 
+–¿A qué te refieres? 
+–La mayoría de las personas goza de independencia para ir a donde quiere y hacer las cosas que le gusta hacer.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 148 | posición 1666-1668 | Añadido el sábado, 10 de febrero de 2024 22:23:25
+
+libertad es como una casa: se construye ladrillo a ladrillo. El primer ladrillo que deberías poner es la fuerza de voluntad. Es la virtud que te inspira a hacer lo correcto en cada momento. Te da la energía para obrar con coraje. Te da el control para vivir la vida que has imaginado, en vez de aceptar la vida que llevas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 148 | posición 1666-1668 | Añadido el sábado, 10 de febrero de 2024 22:23:31
+
+–La libertad es como una casa: se construye ladrillo a ladrillo. El primer ladrillo que deberías poner es la fuerza de voluntad. Es la virtud que te inspira a hacer lo correcto en cada momento. Te da la energía para obrar con coraje. Te da el control para vivir la vida que has imaginado, en vez de aceptar la vida que llevas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 148 | posición 1669-1673 | Añadido el sábado, 10 de febrero de 2024 22:24:12
+
+–Lo creas o no, desarrollar el poder de tu voluntad puede borrar el hábito de preocuparte, mantener tu salud y darte más energía de la que has tenido nunca. Mira, John, el autodominio no es sino control de la mente. La voluntad es la reina de los poderes mentales. Cuando dominas tu mente dominas tu vida. Para dominar la mente hay que empezar siendo capaz de controlar todos y cada uno de los pensamientos. Cuando hayas desarrollado la habilidad de descartar todo pensamiento débil y centrarte sólo en los buenos y positivos, tu comportamiento será bueno y positivo. Pronto atraerás hacia
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 148 | posición 1669-1673 | Añadido el sábado, 10 de febrero de 2024 22:24:21
+
+–Lo creas o no, desarrollar el poder de tu voluntad puede borrar el hábito de preocuparte, mantener tu salud y darte más energía de la que has tenido nunca. Mira, John, el autodominio no es sino control de la mente. La voluntad es la reina de los poderes mentales. Cuando dominas tu mente dominas tu vida. Para dominar la mente hay que empezar siendo capaz de controlar todos y cada uno de los pensamientos. Cuando hayas desarrollado la habilidad de descartar todo pensamiento débil y centrarte sólo en los buenos y positivos, tu comportamiento será bueno y positivo. Pronto atraerás hacia tu vida las cosas que son buenas y positivas.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 148 | posición 1673-1677 | Añadido el sábado, 10 de febrero de 2024 22:24:49
+
+Supongamos que uno de tus objetivos personales es levantarte cada mañana a las seis y salir a correr un poco por el parque cercano a tu casa. Supón que estamos en pleno invierno y que el despertador te saca de un sueño profundo y reparador. Tu primer impulso es apagarlo y seguir durmiendo. Bueno, ya irás a correr mañana. Esto se repite durante unos días hasta que decides que ya eres demasiado viejo para cambiar de hábitos y que el objetivo de ponerse en forma es poco realista.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 148 | posición 1677-1679 | Añadido el sábado, 10 de febrero de 2024 22:25:37
+
+Consideremos un guión distinto. Estamos aún en pleno invierno. Suena el despertador y tú piensas en quedarte acostado. Pero en lugar de someterte a tus hábitos, opones a éstos ideas más poderosas. Empiezas a imaginarte en perfecta forma física, y cómo afecta eso a tu aspecto y tu manera de sentir, de actuar. Oyes los cumplidos
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 149 | posición 1679-1682 | Añadido el sábado, 10 de febrero de 2024 22:26:01
+
+a ellos con tu cuerpo esbelto y atlético. Te concentras en aquello que puedes lograr con la energía que te proporciona un programa regular de ejercicios. Se acabaron las noches ante el televisor porque estás demasiado cansado para hacer cualquier otra cosa. Tu vida está llena de vitalidad, entusiasmo y significado.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 149 | posición 1684-1686 | Añadido el sábado, 10 de febrero de 2024 22:26:40
+
+Si continúas rechazando los pensamientos débiles que con los años pueden haberse colado en el palacio de tu mente, al final verán que no son bienvenidos y su única opción será marcharse. 
+–¿Estás diciendo que los pensamientos son entes físicos? 
+–Sí, y están bajo tu control. Es tan fácil tener pensamientos positivos como tenerlos negativos.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 149 | posición 1686-1691 | Añadido el sábado, 10 de febrero de 2024 22:27:26
+
+Pero entonces ¿por qué tanta gente se preocupa y sólo piensa en la información negativa que el mundo nos da? 
+–Porque no han aprendido el arte del autocontrol y el pensamiento disciplinado. Las personas con las que he hablado no tienen, en su mayoría, la menor idea de que poseen el poder de controlar todas y cada una de las cosas que piensan, en cada momento de cada día de sus vidas. Creen que los pensamientos ocurren y basta, jamás han reparado en que si no te das tiempo para controlarlos, tus pensamientos te dominarán. Cuando empieces a concentrarte sólo en pensamientos positivos, rechazando los negativos a fuerza de voluntad, te aseguro que los pensamientos malos se marchitarán enseguida. 
+–
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 149 | posición 1686-1693 | Añadido el sábado, 10 de febrero de 2024 22:27:40
+
+Pero entonces ¿por qué tanta gente se preocupa y sólo piensa en la información negativa que el mundo nos da? 
+–Porque no han aprendido el arte del autocontrol y el pensamiento disciplinado. Las personas con las que he hablado no tienen, en su mayoría, la menor idea de que poseen el poder de controlar todas y cada una de las cosas que piensan, en cada momento de cada día de sus vidas. Creen que los pensamientos ocurren y basta, jamás han reparado en que si no te das tiempo para controlarlos, tus pensamientos te dominarán. Cuando empieces a concentrarte sólo en pensamientos positivos, rechazando los negativos a fuerza de voluntad, te aseguro que los pensamientos malos se marchitarán enseguida. 
+–Entonces, si quiero ser capaz de levantarme temprano, comer menos, leer más, preocuparme menos, ser más paciente o ser más afectuoso, ¿lo único que he de hacer es emplear la fuerza de voluntad para limpiar mis pensamientos?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 150 | posición 1693-1694 | Añadido el sábado, 10 de febrero de 2024 22:27:58
+
+El que controla sus pensamientos, controla su mente. El que controla su mente, controla su vida. Cuando alcanzas la fase de controlar totalmente tu vida, te conviertes en dueño y señor de tu destino. 
+Yo
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 151 | posición 1709-1716 | Añadido el sábado, 10 de febrero de 2024 22:30:15
+
+Te daré una fórmula para desarrollar la fuerza de voluntad –dijo Julián, sin saber la transformación interior que yo acababa de experimentar–. El conocimiento sin las herramientas adecuadas para aplicarlo no es conocimiento. Cada día, mientras vas andando al trabajo, quisiera que repitieses unas pocas palabras. 
+–¿Es uno de esos mantras que mencionabas antes? –pregunté. 
+–Así es. Un mantra cuya existencia se remonta a más de cinco mil años, aunque sólo el pequeño grupo de Sivana tiene conocimiento del mismo. El yogui Raman me dijo que repitiéndolo yo desarrollaría en poco tiempo el autodominio y una voluntad indomable. Recuerda que las palabras tienen una gran influencia. Las palabras son la encarnación verbal del poder. Si llenas tu mente de palabras buenas, te vuelves bondadoso. Si llenas tu mente de pensamientos de coraje, te vuelves valeroso. Las palabras tienen poder. 
+–Lo sé.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 152 | posición 1716-1717 | Añadido el sábado, 10 de febrero de 2024 22:30:30
+
+«Soy más de lo que aparento, toda la fuerza y el poder del mundo están en mi interior.»
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 152 | posición 1717-1721 | Añadido el sábado, 10 de febrero de 2024 22:31:10
+
+Para conseguir resultados más inmediatos, mezcla este mantra con la práctica de la visualización creativa. Por ejemplo, busca un lugar tranquilo. Siéntate con los ojos cerrados. No dejes que tu mente se extravíe. Mantén el cuerpo inmóvil, pues el síntoma más claro de una mente débil es un cuerpo incapaz de descansar. Repite el mantra en voz alta, una y otra vez. Mientras lo haces, imagínate como una persona disciplinada y resuelta, con absoluto control de tu mente, cuerpo y espíritu.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 152 | posición 1724-1725 | Añadido el sábado, 10 de febrero de 2024 22:32:15
+
+Si te interesa, hay un par de ejercicios más para liberar la fuerza de voluntad y cultivar la disciplina interior. Pero te advierto que al principio podrán parecerte extraños. 
+–Oye, Julián,
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 152 | posición 1726-1736 | Añadido el sábado, 10 de febrero de 2024 22:33:08
+
+Lo primero es empezar haciendo las cosas que no te gustan. Puede ser algo tan simple como hacerte la cama cada ¡mañana o ir al trabajo andando y no en coche. Habituándote a ejercitar tu voluntad, dejarás de ser un esclavo de tus impulsos más débiles. 
+–¿Evitar la atrofia? 
+–Exactamente. Para aumentar la fuerza de voluntad y la fortaleza interior primero debes ponerlas en práctica. Cuanto más ejercites el embrión de la autodisciplina, más rápidamente madurará y te dará los resultados que deseas obtener. El segundo ejercicio es uno de los favoritos del yogui Raman. Solía pasarse un día entero sin hablar, salvo para responder a preguntas directas. 
+–¿Una especie de voto de silencio? 
+–En realidad no era otra cosa, John. Los monjes tibetanos que popularizaron esta práctica creían que estar callado durante un período largo de tiempo tenía el efecto de reforzar la propia disciplina. 
+–Pero ¿cómo? 
+–Guardando silencio durante un día, lo que haces básicamente es condicionar tu voluntad para que haga lo que tú le ordenes. Cada vez que surge la necesidad de hablar, refrenas ese impulso y te quedas callado. Tu voluntad no tiene una mente propia. Espera a que tú le des instrucciones que la hagan ponerse en movimiento. Cuanto más control ejerces sobre ella, más poderosa puede llegar a ser. El problema es que la mayoría de la gente no utiliza su fuerza de voluntad.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 153 | posición 1736-1742 | Añadido el sábado, 10 de febrero de 2024 22:34:08
+
+por qué? 
+–Probablemente porque la mayoría de la gente cree no tener esa fuerza. Culpan a todo y a todos, salvo a ellos mismos, de esta aparente debilidad. Los que tienen muy mal genio dicen que no lo pueden evitar, que su padre era igual. Los que se preocupan demasiado dicen que no es culpa suya, que tiene un trabajo muy estresante. Los que duermen más de la cuenta dicen que su cuerpo lo necesita. Todas estas personas carecen de la responsabilidad que es el producto de conocer el extraordinario potencial que todos tenemos en nuestro interior, esperando un motivo para pasar a la acción. Cuando conozcas a fondo las leyes de la naturaleza, las que gobiernan el funcionamiento del universo y de todas sus criaturas, sabrás también que tienes el derecho natural a ser todo aquello que puedes ser. Tú posees la fuerza para ser más que tu entorno. Del mismo modo, tienes la capacidad de ser algo más que un prisionero de tu pasado. Para hacerlo, debes convertirte en dueño de tu voluntad.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 154 | posición 1743-1746 | Añadido el sábado, 10 de febrero de 2024 22:34:28
+
+realidad, es un concepto práctico. Imagina lo que podrías llegar a hacer si doblaras o triplicaras la fuerza de voluntad que tienes actualmente. Podrías iniciar ese programa de ejercicios con el que sueñas hace tiempo, podrías ser mucho más eficaz con tu tiempo, podrías borrar el hábito de preocuparte, o podrías ser el marido ideal. Usar tu voluntad te permite reavivar la energía vital que dices haber perdido.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 154 | posición 1746-1756 | Añadido el sábado, 10 de febrero de 2024 22:35:23
+
+Decídete a hacer las cosas que deberías hacer, en lugar de seguir el camino del mínimo esfuerzo. Empieza a combatir la fuerza gravitatoria de tus malos hábitos del mismo modo que un cohete espacial supera la fuerza de la gravedad para entrar en el cosmos. Ponte a prueba y verás lo que sucede en cuestión de semanas. 
+–¿Ayudará el mantra? 
+–Sí. Repetir ese mantra que te he dado, junto con la práctica diaria de verte como tú deseas ser, te servirá de apoyo a medida que vayas creando esa vida disciplinada que te conecta con tus sueños. Y no es preciso que lo cambies todo en un día. Empieza por lo pequeño, has de dar el primer paso. Vamos creciendo de manera paulatina. Entrenarte a levantarte una hora antes y no perder ese maravilloso hábito reforzará la confianza en ti mismo y te servirá de inspiración para alcanzar cotas más altas. 
+–No veo la relación –confesé. 
+–Pequeñas victorias conducen a grandes victorias. Para alcanzar lo grande debes reforzar antes lo pequeño. Siendo coherente con la decisión de levantarte más temprano, sentirás el placer y la satisfacción que da el realizar algo. Te has marcado una meta y la has conseguido. Eso sienta bien. El truco está en seguir subiendo el listón constantemente. Eso propiciará el mágico impulso que te motivará a seguir explorando tu infinito potencial. ¿Te gusta esquiar?
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 155 | posición 1759-1764 | Añadido el sábado, 10 de febrero de 2024 22:36:42
+
+el ímpetu es también el ingrediente necesario para la autodisciplina. Como decía antes, empieza poco a poco, ya sea levantándote más temprano, dando un corto paseo cada noche o simplemente apagando el televisor cuando sabes que ya tienes bastante. Estas pequeñas victorias crean ese ímpetu que te anima a dar pasos más largos en la senda de tu yo superior. En poco tiempo estarás haciendo cosas que jamás habías creído ser capaz de hacer, con un vigor y una energía que desconocías en ti. Es un proceso absolutamente delicioso, John. Y el cable color de rosa de la fábula mágica te recordará siempre el poder de tu voluntad.
+==========
+El monje que vendió su ferrari (Luis Ocampo)
+- La subrayado en la página 155 | posición 1765-1770 | Añadido el sábado, 10 de febrero de 2024 22:37:22
+
+Resumen de acción del capítulo 10 La sabiduría de Julián en pocas palabras 
+El Símbolo: La Virtud:
+Vivir con Disciplina 
+La Enseñanza:
+• La disciplina se logra realizando constantemente pequeños actos  De coraje. 
+• Para que madure el embrión de la autodisciplina hay que alimen
+tarlo. 
+• La fuerza de voluntad es la virtud esencial de una vida realizada. Las Técnicas:
+Mantras/Visualización creativa El voto de silencio 
+Cita Valiosa:  Rechaza los pensamientos débiles que se hayan colado en el palacio de tu mente; verán que no son bienvenidos y su única opción será marcharse.
+==========
